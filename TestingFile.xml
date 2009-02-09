@@ -2,7 +2,7 @@
 	<Module>
 		<ModulePrefs
 			title="Search"
-			directory_title="Edwards Lab Open Social Applications"
+			directory_title="Search_Test"
 			title_url=""
 			description="First O.S. App. which performs a search on web sites relevant to the Edwards Lab."
 			author="Matt S."
