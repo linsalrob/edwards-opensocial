@@ -78,7 +78,7 @@
 				name="initialSearch"
 				display_name="__MSG_initial_search__"
 				datatype="string"
-				default_value="Rob Edwards"
+				default_value=""
 			/>
 			
 			<UserPref
