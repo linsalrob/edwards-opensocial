@@ -95,8 +95,6 @@
 			</UserPref>
 			
 			<Content type="html"> <![CDATA[
-			<style type="text/css">
-			@import url(http://www.google.com/uds/css/gsearch.css);
 			
 			#search_control__MODULE_ID__ {
 			margin-top: 4px;
