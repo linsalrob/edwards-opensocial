@@ -2,24 +2,22 @@
 	<Module>
 		<ModulePrefs
 			title="Bioinformatics Search"
-			directory_title="Edwards Lab Bioinformatics Search"
-			title_url="Edwards Lab Bioinformatics Search"
-			description="Performs a search on web sites relevant to the Edwards Lab."
-			author="Matt S. & Vasken K."
+			directory_title="Edwards Bioinformatics Search"
+			title_url=""
+			description="First O.S. App. which performs a search on web sites relevant to the Edwards Lab."
+			author="Matt S. & Vasken K"
 			author_affiliation="SDSU"
 			author_location="San Diego, CA"
 			author_email="matt.c.seitz@gmail.com"
 			screenshot="/ig/modules/ajaxsearch.png"
-            thumbnail="/ig/modules/ajaxsearch-thm.png"
- 			width="300"
-			height="300"
+			thumbnail="/ig/modules/ajaxsearch-thm.png"
+			height="150"
+			width="150"
 			scrolling="true"
 			render_inline="optional"
 			category="tools">
-			
-			<Require feature="opensocial-0.7" />
-			
-			<Locale messages="ajaxsearcEdwards Lab Bioinformatics Searchh_content/en.xml"/>
+
+			<Locale messages="ajaxsearch_content/en.xml"/>
 			<Locale lang="ar" messages="ajaxsearch_content/ar.xml"/>
 			<Locale lang="bg" messages="ajaxsearch_content/bg.xml"/>
 			<Locale lang="ca" messages="ajaxsearch_content/ca.xml"/>
@@ -61,43 +59,43 @@
 			<Locale lang="vi" messages="ajaxsearch_content/vi.xml"/>
 			<Locale lang="zh-CN" messages="ajaxsearch_content/zh-cn.xml"/>
 			<Locale lang="zh-TW" messages="ajaxsearch_content/zh-tw.xml"/>
-			</ModulePrefs>
-			
-			<UserPref
-				name="webResults"
-				display_name="__MSG_web_search__"
-				datatype="bool"
-				default_value="true"
-			/>
-			
-			<UserPref
-				name="tabbedMode"
-				display_name="Tabbed Mode"
-				datatype="bool"
-				default_value="true"
-			/>
-			
-			<UserPref
-				name="initialSearch"
-				display_name="__MSG_initial_search__"
-				datatype="string"
-				default_value=""
-			/>
-			
-			<UserPref
-				name="color"
-				display_name="__MSG_color_scheme__"
-				datatype="enum"
-				default_value="default"
-			>
-			<EnumValue value="default" display_value="__MSG_default__"/>
-			<EnumValue value="pink" display_value="__MSG_pink__"/>
-			<EnumValue value="orange" display_value="__MSG_orange__"/>
-			<EnumValue value="green" display_value="__MSG_green__"/>
-			<EnumValue value="darkgrey" display_value="__MSG_dark_grey__"/>
-			</UserPref>
-			
-			<Content type="html"> <![CDATA[
+		</ModulePrefs>
+		
+		<UserPref
+		name="webResults"
+		display_name="__MSG_web_search__"
+		datatype="bool"
+		default_value="true"
+		/>
+		
+		<UserPref
+		name="tabbedMode"
+		display_name="Tabbed Mode"
+		datatype="bool"
+		default_value="true"
+		/>
+		
+		<UserPref
+		name="initialSearch"
+		display_name="__MSG_initial_search__"
+		datatype="string"
+		default_value=""
+		/>
+		
+		<UserPref
+		name="color"
+		display_name="__MSG_color_scheme__"
+		datatype="enum"
+		default_value="default"
+		>
+		<EnumValue value="default" display_value="__MSG_default__"/>
+		<EnumValue value="pink" display_value="__MSG_pink__"/>
+		<EnumValue value="orange" display_value="__MSG_orange__"/>
+		<EnumValue value="green" display_value="__MSG_green__"/>
+		<EnumValue value="darkgrey" display_value="__MSG_dark_grey__"/>
+		</UserPref>
+		
+		<Content type="html"> <![CDATA[
 			<style type="text/css">
 			@import url(http://www.google.com/uds/css/gsearch.css);
 			
@@ -193,5 +191,5 @@
 			</script>
 			<div id="search_control__MODULE_ID__"><span style="color:#696969;">__MSG_loading__</span></div>
 			]]>
-			</Content>
+		</Content>
 </Module>
