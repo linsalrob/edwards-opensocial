@@ -2,6 +2,7 @@
 	<Module>
 		<ModulePrefs
 			title="Bioinformatics Search"
+			<Require feature="opensocial-0.7" />
 			directory_title="Edwards Lab Bioinformatics Search"
 			title_url=""
 			description="Performs a search on web sites relevant to the Edwards Lab."
