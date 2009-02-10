@@ -5,7 +5,7 @@
 			directory_title="Edwards Lab Bioinformatics Search"
 			title_url=""
 			description="Performs a search on web sites relevant to the Edwards Lab."
-			thumbnail=""
+			thumbnail="http://i74.photobucket.com/albums/i261/skinien/SDSU.jpg"
 			screenshot=""
 			author="Matt S. & Vasken K."
 			author_affiliation="SDSU"
@@ -14,7 +14,8 @@
 			height="150"
 			scrolling="true"
 			render_inline="optional"
-			category="tools">
+			category="tools"
+			/>
 			
 			<Require feature="opensocial-0.7" />
 			
