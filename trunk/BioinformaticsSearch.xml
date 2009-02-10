@@ -17,6 +17,7 @@
 		render_inline="optional"
 		category="tools">
 		
+		<Require feature="opensocial-0.7" />
 		<Locale messages="ajaxsearch_content/en.xml"/>
 		<Locale lang="ar" messages="ajaxsearch_content/ar.xml"/>
 		<Locale lang="bg" messages="ajaxsearch_content/bg.xml"/>
