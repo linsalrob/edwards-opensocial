@@ -2,10 +2,10 @@
 <Module>
 <ModulePrefs
 title="Bioinformatics Search"
-directory_title="Edwards Lab Bioinformatics Search"
+directory_title="Edwards Lab Open Social Applications"
 title_url=""
-description="Performs a search on web sites relevant to the Edwards Lab."
-author="Matt S. & Vasken K."
+description="First O.S. App. which performs a search on web sites relevant to the Edwards Lab."
+author="Matt S."
 author_affiliation="SDSU"
 author_location="San Diego, CA"
 author_email="matt.c.seitz@gmail.com"
