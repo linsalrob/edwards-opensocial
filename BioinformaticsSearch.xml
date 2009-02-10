@@ -9,8 +9,6 @@
 			author_affiliation="SDSU"
 			author_location="San Diego, CA"
 			author_email="matt.c.seitz@gmail.com"
-			screenshot="/ig/modules/ajaxsearch.png"
-			thumbnail="/ig/modules/ajaxsearch-thm.png"
 			height="150"
 			scrolling="true"
 			render_inline="optional"

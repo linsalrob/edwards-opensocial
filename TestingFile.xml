@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 	<Module>
 		<ModulePrefs
-			title="Search"
-			directory_title="Search_Test"
+			title="Bioinformatics Search"
+			directory_title="Edwards Lab Bioinformatics Search"
 			title_url=""
-			description="First O.S. App. which performs a search on web sites relevant to the Edwards Lab."
+			description="Performs a search on web sites relevant to the Edwards Lab."
 			author="Matt S."
 			author_affiliation="SDSU"
 			author_location="San Diego, CA"
 			author_email="matt.c.seitz@gmail.com"
-			screenshot="/ig/modules/ajaxsearch.png"
-			thumbnail="/ig/modules/ajaxsearch-thm.png"
 			height="150"
 			scrolling="true"
 			render_inline="optional"
@@ -58,6 +56,7 @@
 			<Locale lang="vi" messages="ajaxsearch_content/vi.xml"/>
 			<Locale lang="zh-CN" messages="ajaxsearch_content/zh-cn.xml"/>
 			<Locale lang="zh-TW" messages="ajaxsearch_content/zh-tw.xml"/>
+				<Require feature="opensocial-0.7" />
 			</ModulePrefs>
 			
 			<UserPref
@@ -78,7 +77,7 @@
 				name="initialSearch"
 				display_name="__MSG_initial_search__"
 				datatype="string"
-				default_value="Rob Edwards"
+				default_value=""
 			/>
 			
 			<UserPref
