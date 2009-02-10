@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 	<Module>
 		<ModulePrefs
-			title="Bioinformatics Search"
+			title="Bioinformatics Search_TEST"
 			directory_title="Edwards Lab Bioinformatics Search"
 			title_url=""
 			description="Performs a search on web sites relevant to the Edwards Lab."
