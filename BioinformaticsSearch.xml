@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Module>
 <ModulePrefs
-title="Bioinformatics Search"
-directory_title="Edwards Lab Bioinformatics Search"
+title="Search"
+directory_title="Edwards Lab Open Social Applications"
 title_url=""
-description="Performs a search on web sites relevant to the Edwards Lab."
-author="Matt S. & Vasken K."
+description="First O.S. App. which performs a search on web sites relevant to the Edwards Lab."
+author="Matt S."
 author_affiliation="SDSU"
 author_location="San Diego, CA"
 author_email="matt.c.seitz@gmail.com"
-screenshot="http://i74.photobucket.com/albums/i261/skinien/Screenshot.jpg"
-thumbnail="http://i74.photobucket.com/albums/i261/skinien/SDSU.jpg"
-height="200"
-width="300"
+screenshot="/ig/modules/ajaxsearch.png"
+thumbnail="/ig/modules/ajaxsearch-thm.png"
+height="150"
 scrolling="true"
 render_inline="optional"
 category="tools">
