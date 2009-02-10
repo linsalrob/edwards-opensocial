@@ -15,7 +15,7 @@
 			width="150"
 			scrolling="true"
 			render_inline="optional"
-			category="tools">
+			category="tools" >
 
 			<Locale messages="ajaxsearch_content/en.xml"/>
 			<Locale lang="ar" messages="ajaxsearch_content/ar.xml"/>
