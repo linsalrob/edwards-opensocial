@@ -2,7 +2,6 @@
 	<Module>
 		<ModulePrefs
 			title="Bioinformatics Search"
-			<Require feature="opensocial-0.7" />
 			directory_title="Edwards Lab Bioinformatics Search"
 			title_url=""
 			description="Performs a search on web sites relevant to the Edwards Lab."
@@ -59,6 +58,7 @@
 			<Locale lang="vi" messages="ajaxsearch_content/vi.xml"/>
 			<Locale lang="zh-CN" messages="ajaxsearch_content/zh-cn.xml"/>
 			<Locale lang="zh-TW" messages="ajaxsearch_content/zh-tw.xml"/>
+				<Require feature="opensocial-0.7" />
 			</ModulePrefs>
 			
 			<UserPref
