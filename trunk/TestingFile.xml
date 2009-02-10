@@ -13,7 +13,7 @@
 			scrolling="true"
 			render_inline="optional"
 			category="tools">
-
+			<Require feature="opensocial-0.7" />
 			<Locale messages="ajaxsearch_content/en.xml"/>
 			<Locale lang="ar" messages="ajaxsearch_content/ar.xml"/>
 			<Locale lang="bg" messages="ajaxsearch_content/bg.xml"/>
@@ -56,7 +56,6 @@
 			<Locale lang="vi" messages="ajaxsearch_content/vi.xml"/>
 			<Locale lang="zh-CN" messages="ajaxsearch_content/zh-cn.xml"/>
 			<Locale lang="zh-TW" messages="ajaxsearch_content/zh-tw.xml"/>
-				<Require feature="opensocial-0.7" />
 			</ModulePrefs>
 			
 			<UserPref
