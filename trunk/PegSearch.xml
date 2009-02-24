@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+<Content type="html">
+<![CDATA[
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript" src="ws.js"></script>
+<script type="text/javascript" src="getjavascriptproxy.aspx?service=calcservice.asmx"></script>
+<script language="Javascript" type="text/javascript">
+//http://ws.nmpdr.org/FIG/wsdl_seed.cgi
+
+
+peg = "fig|83333.1.peg.1345";
+
+
+var req = new XMLHttpRequest();
+req.open("POST", "http://ws.nmpdr.org/FIG/wsdl_seed.cgi", false);
+
+document.write(peg);
+
+
+</script>]]>
+</Content>
+</Module>
