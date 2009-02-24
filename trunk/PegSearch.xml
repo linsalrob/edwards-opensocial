@@ -34,7 +34,7 @@ service.useService("ws.nmpdr.org/FIG/wsdl_seed.cgi", "get_translation");
 }
 
 var s = "";
-s = service.get_translation.callService(peg);
+//s = service.get_translation.callService(peg);
 document.write(peg);
 
 
