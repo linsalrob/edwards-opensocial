@@ -29,9 +29,9 @@
 
 
 peg = "fig|83333.1.peg.1345";
-
+function init(){
 service.useService("ws.nmpdr.org/FIG/wsdl_seed.cgi", "get_translation");
-
+}
 
 document.write(peg);
 
