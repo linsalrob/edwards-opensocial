@@ -16,8 +16,8 @@ width="200"
 scrolling="true" 
 render_inline="optional" 
 category="tools"> 
-		
-	</ModulePrefs>
+</ModulePrefs>
+
 <Content type="html">
 <![CDATA[
 <script type="text/javascript" src="ajax.js"></script>
