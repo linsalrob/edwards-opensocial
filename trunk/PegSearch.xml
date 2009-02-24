@@ -2,7 +2,7 @@
 <Module>
 <ModulePrefs 
 title="PEG Search" 
-directory_title="Edwards Lab Open Social Applications" 
+directory_title="Edwards Lab PEG Search 
 title_url="" 
 description="PEG Search" 
 author="Vasken K." 
@@ -31,7 +31,7 @@ peg = "fig|83333.1.peg.1345";
 
 
 var req = new XMLHttpRequest();
-req.open("POST", "http://ws.nmpdr.org/FIG/wsdl_seed.cgi", false);
+
 
 document.write(peg);
 
