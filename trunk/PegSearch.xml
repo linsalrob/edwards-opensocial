@@ -57,10 +57,11 @@ function onmyresult()
 }
 
 
+var s = "";
+s = service.get_translation.callService("get_translation", "fig|83333.1.peg.1345");
 
 
-
-
+document.write(s);
 document.write(peg);
 </script>]]>
 <body onload="init();">
