@@ -64,11 +64,8 @@ function onmyresult()
 document.write(peg);
 </script>]]>
 <body onload="init();">
-<BR>
-Enter a Value <input type='text' id='param1'>
-<BR>
-<button onclick='iCallID = service.servicename.callService
-("ProcedureName", param1.value);'>Call A Web Method</button>
+<button onclick='iCallID = service.get_translation.callService
+("get_translation", "fig|83333.1.peg.1345");'>Call A Web Method</button>
 <div id="service"
      style="behavior:url(webservice.htc)"
      onresult="onmyresult();">
