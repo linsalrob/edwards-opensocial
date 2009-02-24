@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
-<ModulePrefs>
-title="PEG Search" 
+<ModulePrefs
+title="PEG Search"
 directory_title="Edwards Lab PEG Search 
 title_url="" 
 description="PEG Search" 
