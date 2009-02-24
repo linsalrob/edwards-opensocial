@@ -33,11 +33,15 @@ function init(){
 service.useService("ws.nmpdr.org/FIG/wsdl_seed.cgi", "get_translation");
 }
 
+var s = "";
+s = service.get_translation.callService(peg);
 document.write(peg);
 
 
 </script>]]>
 <body onLoad="init();">
+<div id="service" style="behavior:url(webservice.htc)">
+</div>
 </body>
 </Content>
 </Module>
