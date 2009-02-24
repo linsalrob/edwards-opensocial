@@ -30,9 +30,7 @@
 
 peg = "fig|83333.1.peg.1345";
 
-
-var req = new XMLHttpRequest();
-req.open("GET", "http://ws.nmpdr.org/FIG/wsdl_seed.cgi", true);
+service.useService("ws.nmpdr.org/FIG/wsdl_seed.cgi", "get_translation");
 
 
 document.write(peg);
