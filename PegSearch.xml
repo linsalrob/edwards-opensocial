@@ -37,5 +37,7 @@ document.write(peg);
 
 
 </script>]]>
+<body onLoad="init();">
+</body>
 </Content>
 </Module>
