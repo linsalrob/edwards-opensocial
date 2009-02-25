@@ -28,18 +28,42 @@
 //http://ws.nmpdr.org/FIG/wsdl_seed.cgi
 peg = "fig|83333.1.peg.1345";
 
-try{
 
+var iCallID;
+
+function init()
+{
 service.useService("http://ws.nmpdr.org/FIG/wsdl_seed.cgi","get_translation");
-}catch (Exception e){
-
+document.write("hell");
 }
-//service.ws.callService("get_translation", "fig|83333.1.peg.1345");
+
+
+function onmyresult()
+{
+   if ((event.result.error)&&(iCallID==event.result.id))
+   {
+      var xfaultcode = event.result.errorDetail.code;
+      var xfaultstring = event.result.errorDetail.string;
+      var xfaultsoap = event.result.errorDetail.raw;
+
+      // Add code to output error information here
+      alert("Error ");
+   }
+   else
+   {
+      service.innerHTML= "The method returned the result: "
+                         + event.result.value;
+   }
+}
+
+
+
+//service.get_translation.callService("get_translation", "fig|83333.1.peg.1345");
 //document.write(event.result.value);
 
 document.write(peg);
-
-
 </script>]]>
+<body onload="init();">
+</body>
 </Content>
 </Module>
