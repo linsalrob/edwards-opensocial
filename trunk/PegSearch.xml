@@ -28,11 +28,32 @@
 //http://ws.nmpdr.org/FIG/wsdl_seed.cgi
 peg = "fig|83333.1.peg.1345";
 
-service.useService("http://ws.nmpdr.org/FIG/wsdl_seed.cgi","get_translation");
+function getTranslation(peg)
+{
+    ws = new ActiveXObject("MSXML2.XMLHTTP");
+    ws.open("POST",
+ "http://seed-viewer.theseed.org/webservices_seed.cgi",
+ false);
+    ws.setRequestHeader("Content-Type", "text/xml");
+    ws.setRequestHeader("SOAPAction", "http://seed-viewer.theseed.org/SeedWebServices#get_translation"");
+    oXmlHttp.send(" \
 
+<soap:Envelopexmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' \
+xmlns:xsd='http://www.w3.org/2001/XMLSchema' \
+ xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/'> \
+  <soap:Body> \
+    <get_translationxmlns='http://seed-viewer.theseed.org/SeedWebServices'> \
+      <peg>" + peg + "</peg> \
+    </get_translation> \
+  </soap:Body> \
 
-//service.get_translation.callService("get_translation", "fig|83333.1.peg.1345");
-//document.write(event.result.value);
+</soap:Envelope> \
+
+");
+    return ws.responseXML.selectSingleNode("//get_translation").text;
+
+}
+
 
 document.write(peg);
 </script>]]>
