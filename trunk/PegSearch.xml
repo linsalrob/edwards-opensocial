@@ -30,7 +30,7 @@ peg = "fig|83333.1.peg.1345";
 document.write(peg);
 
     ws = new ActiveXObject("MSXML2.XMLHTTP");
-    ws.open("POST",
+ /*   ws.open("POST",
  "http://seed-viewer.theseed.org/webservices_seed.cgi",
  false);
     ws.setRequestHeader("Content-Type", "text/xml");
@@ -50,7 +50,7 @@ xmlns:xsd='http://www.w3.org/2001/XMLSchema' \
 
 ");
 //    return ws.responseXML.selectSingleNode("//get_translation").text;
-
+*/
 var s = "";
 
 
