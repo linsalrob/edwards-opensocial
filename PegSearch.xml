@@ -20,6 +20,8 @@
 	</ModulePrefs>
 
 <Content type="html">
+<body onload="init();">
+</body>
 <![CDATA[
 <script type="text/javascript" src="ajax.js"></script>
 <script type="text/javascript" src="ws.js"></script>
@@ -63,7 +65,6 @@ function onmyresult()
 
 document.write(peg);
 </script>]]>
-<body onload="init();">
-</body>
+
 </Content>
 </Module>
