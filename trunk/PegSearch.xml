@@ -29,13 +29,13 @@
 peg = "fig|83333.1.peg.1345";
 
 
-var iCallID;
-
-service.useService("http://ws.nmpdr.org/FIG/wsdl_seed.cgi","ws");
+//service.useService("http://ws.nmpdr.org/FIG/wsdl_seed.cgi","ws");
 //service.ws.callService("get_translation", "fig|83333.1.peg.1345");
 //document.write(event.result.value);
 
 document.write(peg);
+
+
 </script>]]>
 </Content>
 </Module>
