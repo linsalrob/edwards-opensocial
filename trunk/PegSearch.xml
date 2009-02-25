@@ -29,32 +29,10 @@
 peg = "fig|83333.1.peg.1345";
 
 
-var iCallID;
+service.useService("http://ws.nmpdr.org/FIG/wsdl_seed.cgi","get_translation");
 
-function init()
-{
-service.useService
-("http://ws.nmpdr.org/FIG/wsdl_seed.cgi",
-                   "get_translation");
-}
+document.write(event.result.value);
 
-function onmyresult()
-{
-   if ((event.result.error)&&(iCallID==event.result.id))
-   {
-      var xfaultcode = event.result.errorDetail.code;
-      var xfaultstring = event.result.errorDetail.string;
-      var xfaultsoap = event.result.errorDetail.raw;
-
-      // Add code to output error information here
-      alert("Error ");
-   }
-   else
-   {
-      service.innerHTML= "The method returned the result: "
-                         + event.result.value;
-   }
-}
 
 
 
@@ -63,13 +41,5 @@ function onmyresult()
 
 document.write(peg);
 </script>]]>
-<body onload="init();">
-<button onclick='iCallID = service.get_translation.callService
-("get_translation", "fig|83333.1.peg.1345");'>Call A Web Method</button>
-<div id="service"
-     style="behavior:url(webservice.htc)"
-     onresult="onmyresult();">
-</div>
-</body>
 </Content>
 </Module>
