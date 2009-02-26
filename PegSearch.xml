@@ -28,9 +28,15 @@
 //http://ws.nmpdr.org/FIG/wsdl_seed.cgi
 peg = "fig|83333.1.peg.1345";
 
+var params = {};
+  params[gadgets.io.RequestParameters.CONTENT_TYPE] =  
+      gadgets.io.ContentType.TEXT;
+  var url = ""http://seed-viewer.theseed.org/SeedWebServices#get_translation";
+  gadgets.io.makeRequest(url, response, params);
 
-gadgets.io.makeRequest("http://example.com", function() {}, params);
-
+function response(obj){
+document.write(obj.txt);
+};
 
 document.write(peg);
 </script>]]>
