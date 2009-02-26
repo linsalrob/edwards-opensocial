@@ -20,6 +20,8 @@
 	</ModulePrefs>
 
 <Content type="html">
+<DIV ID="WebService"
+  STYLE="behavior:url(webservice.htc)"></DIV>
 <![CDATA[
 <script type="text/javascript" src="ajax.js"></script>
 <script type="text/javascript" src="ws.js"></script>
