@@ -41,7 +41,7 @@ function init()
 service.useService
 ("http://seed-viewer.theseed.org/SeedWebServices#get_translation",
                    "get_translation");
-prompt(enter peg);
+alert("Err");
 }
 
 function onmyresult()
