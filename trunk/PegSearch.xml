@@ -31,9 +31,9 @@ peg = "fig|83333.1.peg.1345";
 
 
  var pl = new SOAPClientParameters();
-  pl.add(peg);
-   SOAPClient.invoke("http://seed-viewer.theseed.org/SeedWebServices#get_translation", "get_translation", pl, true, gt);
-}
+ // pl.add(peg);
+  // SOAPClient.invoke("http://seed-viewer.theseed.org/SeedWebServices#get_translation", "get_translation", pl, true, gt);
+//}
 function gt(r)
 {
     alert(r);
