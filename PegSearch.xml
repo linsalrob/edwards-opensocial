@@ -19,9 +19,6 @@
 		<Require feature="opensocial-0.7" />
 	</ModulePrefs>
 <body onload="init();">
-
-<button onclick='iCallID = service.servicename.callService
-("get_translation", "fig|83333.1.peg.1345");'>Call A Web Method</button>
 <div id="service"
      style="behavior:url(webservice.htc)"
      onresult="onmyresult();">
@@ -42,8 +39,9 @@ var iCallID;
 function init()
 {
 service.useService
-("http://myserver.com/services/myservice.asmx?WSDL",
-                   "servicename");
+("http://seed-viewer.theseed.org/SeedWebServices#get_translation",
+                   "get_translation");
+prompt(enter peg);
 }
 
 function onmyresult()
