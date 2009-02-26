@@ -41,7 +41,7 @@ function init()
 service.useService
 ("http://seed-viewer.theseed.org/SeedWebServices#get_translation",
                    "get_translation");
-alert("Err");
+
 }
 
 function onmyresult()
@@ -61,6 +61,8 @@ function onmyresult()
                          + event.result.value;
    }
 }
+
+init();
 document.write(peg);
 </script>]]>
 
