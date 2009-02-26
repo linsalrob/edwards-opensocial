@@ -32,13 +32,13 @@ peg = "fig|83333.1.peg.1345";
 
 function request() {  
   var params = {};
-  params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.txt;
+  params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
   var url = "http://seed-viewer.theseed.org/SeedWebServices#get_translation?peg=fig|83333.1.peg.1345";
   gadgets.io.makeRequest(url, response, params);
 };
 
 function response(obj){
-alert("hello" + obj.txt);
+alert("hello" + obj.text);
 alert("hello");
 }
 
