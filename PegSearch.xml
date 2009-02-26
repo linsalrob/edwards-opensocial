@@ -18,9 +18,15 @@
 		category="tools">
 		<Require feature="opensocial-0.7" />
 	</ModulePrefs>
-<DIV ID="WebService"
-STYLE="behavior:url(webservice.htc)"></DIV>
+<body onload="init();">
 
+<button onclick='iCallID = service.servicename.callService
+("get_translation", "fig|83333.1.peg.1345");'>Call A Web Method</button>
+<div id="service"
+     style="behavior:url(webservice.htc)"
+     onresult="onmyresult();">
+</div>
+</body>
 <Content type="html">
 <![CDATA[
 <script type="text/javascript" src="ajax.js"></script>
@@ -31,7 +37,32 @@ STYLE="behavior:url(webservice.htc)"></DIV>
 //http://seed-viewer.theseed.org/SeedWebServices#get_translation
 peg = "fig|83333.1.peg.1345";
 
+var iCallID;
 
+function init()
+{
+service.useService
+("http://myserver.com/services/myservice.asmx?WSDL",
+                   "servicename");
+}
+
+function onmyresult()
+{
+   if ((event.result.error)&&(iCallID==event.result.id))
+   {
+      var xfaultcode = event.result.errorDetail.code;
+      var xfaultstring = event.result.errorDetail.string;
+      var xfaultsoap = event.result.errorDetail.raw;
+
+      // Add code to output error information here
+      alert("Error ");
+   }
+   else
+   {
+      service.innerHTML= "The method returned the result: "
+                         + event.result.value;
+   }
+}
 document.write(peg);
 </script>]]>
 
