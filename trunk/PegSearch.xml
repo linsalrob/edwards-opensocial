@@ -18,12 +18,7 @@
 		category="tools">
 		<Require feature="opensocial-0.7" />
 	</ModulePrefs>
-<body onload="init();">
-<div id="service"
-     style="behavior:url(webservice.htc)"
-     onresult="onmyresult();">
-</div>
-</body>
+
 <Content type="html">
 <![CDATA[
 <script type="text/javascript" src="ajax.js"></script>
@@ -34,35 +29,16 @@
 //http://seed-viewer.theseed.org/SeedWebServices#get_translation
 peg = "fig|83333.1.peg.1345";
 
-var iCallID;
 
-function init()
+ var pl = new SOAPClientParameters();
+  pl.add(peg);
+   SOAPClient.invoke("http://ws.nmpdr.org/FIG/wsdl_seed.cgi", "get_translation", pl, true, gt);
+}
+function gt(r)
 {
-service.useService
-("http://seed-viewer.theseed.org/SeedWebServices#get_translation",
-                   "get_translation");
-
+    alert(r);
 }
 
-function onmyresult()
-{
-   if ((event.result.error)&&(iCallID==event.result.id))
-   {
-      var xfaultcode = event.result.errorDetail.code;
-      var xfaultstring = event.result.errorDetail.string;
-      var xfaultsoap = event.result.errorDetail.raw;
-
-      // Add code to output error information here
-      alert("Error ");
-   }
-   else
-   {
-      service.innerHTML= "The method returned the result: "
-                         + event.result.value;
-   }
-}
-
-init();
 document.write(peg);
 </script>]]>
 
