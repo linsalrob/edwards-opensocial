@@ -38,7 +38,7 @@ function request() {
 };
 
 function response(obj){
-output(obj.data);
+document.write(obj.data);
 }
 
 request();
