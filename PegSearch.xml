@@ -27,7 +27,7 @@
 <script language="Javascript" type="text/javascript">
 //http://ws.nmpdr.org/FIG/wsdl_seed.cgi
 peg = "fig|83333.1.peg.1345";
-document.write(peg);
+
 
     ws = new ActiveXObject("MSXML2.XMLHTTP");
  /*   ws.open("POST",
@@ -52,7 +52,6 @@ xmlns:xsd='http://www.w3.org/2001/XMLSchema' \
 //    return ws.responseXML.selectSingleNode("//get_translation").text;
 */
 var s = "";
-
 
 
 document.write(peg);
