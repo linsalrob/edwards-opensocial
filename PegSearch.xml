@@ -41,7 +41,7 @@ function response(obj){
 output(obj.data);
 }
 
-
+request();
 document.write(peg);
 </script>]]>
 
