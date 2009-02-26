@@ -31,19 +31,27 @@
 //http://seed-viewer.theseed.org/SeedWebServices#get_translation
 peg = "fig|83333.1.peg.1345";
 
+var call = new WS.Call("http://ws.nmpdr.org/FIG/wsdl_seed.cgi"); 
+ // var nsuri = 'http://example';
+  //var qn_op = new WS.QName('sayHello',nsuri);
+  //var qn_op_resp = new WS.QName('sayHelloResponse',nsuri);  
+  //call.invoke_rpc(
+   // qn_op,
+   // new Array(
+   //   {name:'name',value:name}
+   // ),null,
+   // function(call,envelope) {
+   //   var ret = 
+   //     envelope.get_body().get_all_children()[0].
+    //      get_all_children()[0].get_value();
+    //  container.innerHTML = ret;
+    //  $('soap').innerHTML = arguments[2].escapeHTML();
+   // }
+  //);                
 
-function request() {  
-  var params = {};
-  params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-  var url = "http://seed-viewer.theseed.org/SeedWebServices#get_translation?name=get_translation&param1=fig|83333.1.peg.1345";
-  gadgets.io.makeRequest(url, response, params);
-};
 
-function response(obj){
-alert(obj.text);
-}
 
-request();
+
 document.write(peg);
 </script>]]>
 
