@@ -30,28 +30,25 @@ peg = "fig|83333.1.peg.1345";
 
 
     ws = new ActiveXObject("MSXML2.XMLHTTP");
- /*   ws.open("POST",
- "http://seed-viewer.theseed.org/webservices_seed.cgi",
- false);
-    ws.setRequestHeader("Content-Type", "text/xml");
-    ws.setRequestHeader("SOAPAction", "http://seed-viewer.theseed.org/SeedWebServices#get_translation"");
-    oXmlHttp.send(" \
+//    ws.open("POST", "http://seed-viewer.theseed.org/webservices_seed.cgi", false);
+ //   ws.setRequestHeader("Content-Type", "text/xml");
+  //  ws.setRequestHeader("SOAPAction", "http://seed-viewer.theseed.org/SeedWebServices#get_translation"");
+  //  oXmlHttp.send(" \
 
-<soap:Envelopexmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' \
-xmlns:xsd='http://www.w3.org/2001/XMLSchema' \
- xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/'> \
-  <soap:Body> \
-    <get_translationxmlns='http://seed-viewer.theseed.org/SeedWebServices'> \
-      <peg>" + peg + "</peg> \
-    </get_translation> \
-  </soap:Body> \
+//<soap:Envelopexmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' \
+//xmlns:xsd='http://www.w3.org/2001/XMLSchema' \
+// xmlns:soap='http://schemas.xmlsoap.org/soap/envelope/'> \
+ // <soap:Body> \
+  //  <get_translationxmlns='http://seed-viewer.theseed.org/SeedWebServices'> \
+   //   <peg>" + peg + "</peg> \
+   // </get_translation> \
+ // </soap:Body> \
 
-</soap:Envelope> \
+//</soap:Envelope> \
 
-");
+//");
 //    return ws.responseXML.selectSingleNode("//get_translation").text;
-*/
-var s = "";
+
 
 
 document.write(peg);
