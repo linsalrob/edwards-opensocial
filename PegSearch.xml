@@ -39,6 +39,7 @@ function request() {
 
 function response(obj){
 document.write(obj.data);
+document.write("hello");
 }
 
 request();
