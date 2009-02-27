@@ -1,0 +1,74 @@
+<<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+
+<ModulePrefs
+		title="PEG Search"
+		directory_title="Edwards Lab PEG Search"
+		title_url=""
+		description="PEG Search"
+		author="Vasken K. and Matt S."
+		author_affiliation="SDSU"
+		author_location="San Diego, CA"
+		author_email="skinien@cox.net"
+		screenshot=""
+		thumbnail="http://i74.photobucket.com/albums/i261/skinien/SDSU.jpg"
+		height="200"
+		width="200"
+		scrolling="true"
+		render_inline="optional"
+		category="tools">
+		<Require feature="opensocial-0.7" />
+</ModulePrefs>
+
+<Content type="html">
+
+	<DIV ID="WebService"
+	STYLE="behavior:url(webservice.htc)"></DIV>
+  
+	<![CDATA[
+
+		<script type="text/javascript" src="ajax.js"></script>
+		<script type="text/javascript" src="ws.js"></script>
+		<script type="text/javascript" src="getjavascriptproxy.aspx?service=calcservice.asmx"></script>
+		
+		<script language="Javascript" type="text/javascript">
+		
+			//http://ws.nmpdr.org/FIG/wsdl_seed.cgi
+			//http://seed-viewer.theseed.org/SeedWebServices#get_translation
+			//get_translation
+			//"fig|83333.1.peg.1345";
+			
+			function loadService() {
+				webServiceCallerBody.useService(
+					"http://ws.nmpdr.org/FIG/wsdl_seed.cgi?WSDL","pegSearch");
+			};
+
+			
+			function request() {
+				var co = webServiceCallerBody.createCallOptions();
+				co.funcName = "get_translation?peg=fig|83333.1.peg.1345";
+				co.async = false;
+				var result = webServiceCallerBody.echo.callService
+							  (co, "Synchronous Call");
+				handleResult(result);
+			}:
+
+			function handleResult(res) {
+				  if (!res.error) {
+					alert("Successful call. Result is " + res.value);
+				  }
+				  else {
+					alert("Unsuccessful call. Error is " + res.errorDetail.string);
+				  }
+				}
+			
+			loadService();
+			request();
+
+			//document.write(peg);
+			
+		</script>
+	]]>
+    
+</Content>
+</Module>
