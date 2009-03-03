@@ -44,7 +44,7 @@ alert(obj.text);
 request();
 
 
-document.write("hello");
+document.write(peg);
 </script>]]>
 
 </Content>
