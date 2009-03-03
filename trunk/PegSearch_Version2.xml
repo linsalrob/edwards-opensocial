@@ -3,7 +3,7 @@
 
 <ModulePrefs
 		title="PEG Search"
-		directory_title="[Other] Edwards Lab PEG Search"
+		directory_title="Edwards Lab PEG Search"
 		title_url=""
 		description="PEG Search"
 		author="Vasken K. and Matt S."
@@ -21,54 +21,39 @@
 </ModulePrefs>
 
 <Content type="html">
-
-	<DIV ID="WebService"
-	STYLE="behavior:url(webservice.htc)"></DIV>
+<DIV ID="WebService"
+  STYLE="behavior:url(webservice.htc)"></DIV>
   
-	<![CDATA[
+<![CDATA[
 
-		<script type="text/javascript" src="ajax.js"></script>
-		<script type="text/javascript" src="ws.js"></script>
-		<script type="text/javascript" src="getjavascriptproxy.aspx?service=calcservice.asmx"></script>
-		
-		<script language="Javascript" type="text/javascript">
-		
-			//http://ws.nmpdr.org/FIG/wsdl_seed.cgi
-			//http://seed-viewer.theseed.org/SeedWebServices#get_translation
-			//get_translation
-			//"fig|83333.1.peg.1345";
-			
-			function loadService() {
-				webServiceCallerBody.useService(
-					"http://ws.nmpdr.org/FIG/wsdl_seed.cgi?WSDL","pegSearch");
-			};
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript" src="edwards-opensocial.googlecode.com/svn/trunk/ws.js"></script>
+<script type="text/javascript" src="getjavascriptproxy.aspx?service=calcservice.asmx"></script>
+<script language="Javascript" type="text/javascript">
+//http://ws.nmpdr.org/FIG/wsdl_seed.cgi
+//http://seed-viewer.theseed.org/SeedWebServices#get_translation
+peg = "fig|83333.1.peg.1345";
 
-			
-			function request() {
-				var co = webServiceCallerBody.createCallOptions();
-				co.funcName = "get_translation?peg=fig|83333.1.peg.1345";
-				co.async = false;
-				var result = webServiceCallerBody.echo.callService
-							  (co, "Synchronous Call");
-				handleResult(result);
-			}:
+var call = new WS.Call(''); 
+var nsuri = 'http://example';
+var qn_op = new WS.QName('sayHello',nsuri);
+var qn_op_resp = new WS.QName('sayHelloResponse',nsuri);  
+call.invoke_rpc(
+  qn_op,
+  new Array(
+    {name:'name',value:name}
+   ),null,
+   function(call,envelope) {
+     var ret = 
+       envelope.get_body().get_all_children()[0].
+         get_all_children()[0].get_value();
+     container.innerHTML = ret;
+     $('soap').innerHTML = arguments[2].escapeHTML();
+   }
+);
 
-			function handleResult(res) {
-				  if (!res.error) {
-					alert("Successful call. Result is " + res.value);
-				  }
-				  else {
-					alert("Unsuccessful call. Error is " + res.errorDetail.string);
-				  }
-				}
-			
-			loadService();
-			request();
+document.write(peg);
+</script>]]>
 
-			//document.write(peg);
-			
-		</script>
-	]]>
-    
 </Content>
 </Module>
