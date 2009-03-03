@@ -31,18 +31,14 @@
 //http://seed-viewer.theseed.org/SeedWebServices#get_translation
 peg = "fig|83333.1.peg.1345";
 
-function request() {  
-  var params = {};
-  var url = "http://www.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=ids&retmode=xml&tool=pubmedbrowsergadget";
-  gadgets.io.makeRequest(url, response);
-};
-
-function response(obj){
-alert(obj.text);
-}
-
-request();
-
+var envelope = new SOAP.Envelope();
+var body = envelope.create_body();
+body.set_rpc(
+  new WS.QName('param','urn:foo'),
+  new Array(
+    {name:'param',value:'bar'}
+  ), SOAP.NOENCODING
+);
 
 document.write(peg);
 </script>]]>
