@@ -33,10 +33,7 @@ peg = "fig|83333.1.peg.1345";
 
 function request() {  
   var params = {};
-  var url = "http://www.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed";
-						url += "&id=" + ids;
-						url += "&retmode=xml";
-						url += "&tool=pubmedbrowsergadget";
+  var url = "http://www.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=" + ids&retmode=xml&tool=pubmedbrowsergadget";
   gadgets.io.makeRequest(url, response);
 };
 
