@@ -160,7 +160,7 @@ var XML = {
 }
    
 /******************************************************************************/
-WS.QName = Class.create();
+WS.QName = new Class;
 WS.QName.fromElement = function() {
   var qname =
     new WS.QName(
