@@ -33,7 +33,11 @@ peg = "fig|83333.1.peg.1345";
 
 function request() {  
   var params = {};
-  var url = "http://seed-viewer.theseed.org/SeedWebServices#get_translation?peg=fig|83333.1.peg.1345";
+  var url = "http://www.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?";
+  						url += "?db=pubmed";
+						url += "&id=" + ids;
+						url += "&retmode=xml";
+						url += "&tool=pubmedbrowsergadget";
   gadgets.io.makeRequest(url, response);
 };
 
