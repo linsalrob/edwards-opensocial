@@ -24,7 +24,7 @@
   STYLE="behavior:url(webservice.htc)"></DIV>
 <![CDATA[
 <script type="text/javascript" src="ajax.js"></script>
-<script type="text/javascript" src="ws.js"></script>
+<script type="text/javascript" src="http://edwards-opensocial.googlecode.com/svn/trunk/ws.js"></script>
 <script type="text/javascript" src="getjavascriptproxy.aspx?service=calcservice.asmx"></script>
 <script language="Javascript" type="text/javascript">
 //http://ws.nmpdr.org/FIG/wsdl_seed.cgi
