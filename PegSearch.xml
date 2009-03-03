@@ -157,10 +157,10 @@ var XML = {
     }
     return nl;
   }
-};
+}
    
 /******************************************************************************/
-var WS.QName = Class.create();
+WS.QName = Class.create();
 WS.QName.fromElement = function() {
   var qname =
     new WS.QName(
