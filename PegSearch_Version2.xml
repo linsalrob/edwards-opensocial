@@ -56,9 +56,9 @@ function getTranslation (peg) {
 	);
 }
 
-document.write(getTranslation(peg));
+getTranslation(peg);
 
-document.write('\nEND OF FILE REACHED');
+document.write('END OF FILE REACHED');
 /******************************************************************************/
 </script>]]>
 
