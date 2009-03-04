@@ -49,7 +49,7 @@ function getTranslation (peg, container) {
 	       envelope.get_body().get_all_children()[0].
 	         get_all_children()[0].get_value();
 	     container.innerHTML = ret;
-	     $('soap').innerHTML = arguments[2].escapeHTML();
+	//     $('soap').innerHTML = arguments[2].escapeHTML();
 	   }
 	);
 }
