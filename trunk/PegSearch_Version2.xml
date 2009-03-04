@@ -52,23 +52,12 @@ function getTranslation (peg, container) {
 	   }
 	);
 }
+
+document.write(getTranslation(peg, result));
+
 document.write('END OF FILE REACHED');
 /******************************************************************************/
 </script>]]>
-
-<body>
-<input name="name" id="name" />
-<input value="Invoke the Web Service"
-       type="button" 
-       onclick="getTranslation($('name').value,$('result'))" />
-<div id="container">Result:
-<div id="result">
-</div>
-<div id="soap">
-</div>
-</div>
-</body>
-
 
 </Content>
 </Module>
