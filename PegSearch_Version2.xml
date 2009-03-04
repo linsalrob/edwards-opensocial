@@ -23,6 +23,12 @@
 <Content type="html">
   
 <![CDATA[
+
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript" src="edwards-opensocial.googlecode.com/svn/trunk/ws.js"></script>
+<script type="text/javascript" src="getjavascriptproxy.aspx?service=calcservice.asmx"></script>
+<script language="Javascript" type="text/javascript">
+
 /******************************************************************************/
 var WS = {
   Version :   '0.1',
@@ -562,11 +568,8 @@ WS.Call.prototype = {
     new Ajax.Request(this.uri,options);
   }
 };
-/ **************************************************************************** /
-<script type="text/javascript" src="ajax.js"></script>
-<script type="text/javascript" src="edwards-opensocial.googlecode.com/svn/trunk/ws.js"></script>
-<script type="text/javascript" src="getjavascriptproxy.aspx?service=calcservice.asmx"></script>
-<script language="Javascript" type="text/javascript">
+
+/ ******************************************************************** /
 
 var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
 //http://seed-viewer.theseed.org/SeedWebServices#get_translation
