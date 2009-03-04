@@ -23,41 +23,6 @@
 <Content type="html">
   
 <![CDATA[
-
-<script type="text/javascript" src="ajax.js"></script>
-<script type="text/javascript" src="edwards-opensocial.googlecode.com/svn/trunk/ws.js"></script>
-<script type="text/javascript" src="getjavascriptproxy.aspx?service=calcservice.asmx"></script>
-<script language="Javascript" type="text/javascript">
-
-var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
-//http://seed-viewer.theseed.org/SeedWebServices#get_translation
-
-var peg = "fig|83333.1.peg.1345";
-
-var call = new WS.Call('/SeedWebServicesHandler'); 
-var nsuri = url;
-var qn_op = new WS.QName('get_translation',nsuri);
-var qn_op_resp = new WS.QName('get_translationResponse',nsuri);  
-call.invoke_rpc(
-  qn_op,
-  new Array(
-    {name:'get_translationRequest',value:peg}
-   ),null,
-   function(call,envelope) {
-     var ret = 
-       envelope.get_body().get_all_children()[0].
-         get_all_children()[0].get_value();
-     container.innerHTML = ret;
-     $('soap').innerHTML = arguments[2].escapeHTML();
-   }
-);
-
-function response() {
-	document.write(peg);
-}
-
-document.write(peg);
-/******************************************************************************/
 /******************************************************************************/
 var WS = {
   Version :   '0.1',
@@ -597,7 +562,41 @@ WS.Call.prototype = {
     new Ajax.Request(this.uri,options);
   }
 };
+/ **************************************************************************** /
+<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript" src="edwards-opensocial.googlecode.com/svn/trunk/ws.js"></script>
+<script type="text/javascript" src="getjavascriptproxy.aspx?service=calcservice.asmx"></script>
+<script language="Javascript" type="text/javascript">
 
+var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
+//http://seed-viewer.theseed.org/SeedWebServices#get_translation
+
+var peg = "fig|83333.1.peg.1345";
+
+var call = new WS.Call('/SeedWebServicesHandler'); 
+var nsuri = url;
+var qn_op = new WS.QName('get_translation',nsuri);
+var qn_op_resp = new WS.QName('get_translationResponse',nsuri);  
+call.invoke_rpc(
+  qn_op,
+  new Array(
+    {name:'get_translationRequest',value:peg}
+   ),null,
+   function(call,envelope) {
+     var ret = 
+       envelope.get_body().get_all_children()[0].
+         get_all_children()[0].get_value();
+     container.innerHTML = ret;
+     $('soap').innerHTML = arguments[2].escapeHTML();
+   }
+);
+
+function response() {
+	document.write(peg);
+}
+
+document.write(peg);
+/******************************************************************************/
 </script>]]>
 
 </Content>
