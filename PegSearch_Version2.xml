@@ -32,7 +32,7 @@
 //http://seed-viewer.theseed.org/SeedWebServices#get_translation
 
 var peg = 'fig|83333.1.peg.1345';
-var result = 'foo';
+var result = '';
   
 function getTranslation (peg, container) {
 	var call = new WS.Call('/FIG/wsdl_seed.cgi/SeedWebServicesHandler'); 
@@ -53,7 +53,7 @@ function getTranslation (peg, container) {
 	     
 	   }
 	);
-	document.write(container);
+	document.write(container.innerHTML);
 }
 
 getTranslation(peg, result);
