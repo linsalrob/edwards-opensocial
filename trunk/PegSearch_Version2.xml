@@ -52,7 +52,6 @@ function getTranslation (peg, container) {
 	     $('soap').innerHTML = arguments[2].escapeHTML();
 	   }
 	);
-	document.write($('soap').innerHTML);
 }
 
 getTranslation(peg, result);
