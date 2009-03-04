@@ -28,15 +28,15 @@
 <script language="Javascript" type="text/javascript">
 /****************************************************************************/
 
-var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
+//var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
 //http://seed-viewer.theseed.org/SeedWebServices#get_translation
 
-var peg = "fig|83333.1.peg.1345";
-var result = "";
+var peg = 'fig|83333.1.peg.1345';
+var result = '';
   
 function getTranslation (peg, container) {
 	var call = new WS.Call('/SeedWebServicesHandler'); 
-	var nsuri = url;
+	var nsuri = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
 	var qn_op = new WS.QName('get_translation',nsuri);
 	var qn_op_resp = new WS.QName('get_translationResponse',nsuri);
 	call.invoke_rpc(
