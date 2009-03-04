@@ -48,6 +48,7 @@ function getTranslation (peg, container) {
 	     var ret = 
 	       envelope.get_body().get_all_children()[0].
 	         get_all_children()[0].get_value();
+	         document.write(ret);
 	     container.innerHTML = ret;
 	//     $('soap').innerHTML = arguments[2].escapeHTML();
 	   }
