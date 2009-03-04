@@ -24,7 +24,7 @@
   
 <![CDATA[
 <script type="text/javascript" src="Prototype.js"></script>
-<script type="text/javascript" src="ws.js"></script>
+<script type="text/javascript" src="ws_update.js"></script>
 <script language="Javascript" type="text/javascript">
 /****************************************************************************/
 
