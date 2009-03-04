@@ -23,10 +23,7 @@
 <Content type="html">
   
 <![CDATA[
-/****************************************************************************/
-<script type="text/javascript" src="ajax.js"></script>
 <script type="text/javascript" src="ws.js"></script>
-<script type="text/javascript" src="getjavascriptproxy.aspx?service=calcservice.asmx"></script>
 <script language="Javascript" type="text/javascript">
 /****************************************************************************/
 
