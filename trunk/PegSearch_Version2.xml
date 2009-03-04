@@ -51,13 +51,12 @@ function getTranslation (peg, container) {
 	     container.innerHTML = ret;
 	     $('soap').innerHTML = arguments[2].escapeHTML();
 	     
-	     // ADDED to test var ret
-	     document.write(ret);
 	   }
+	   document.write(container);
 	);
 }
 
-result = getTranslation(peg, result);
+getTranslation(peg, result);
 document.write(result);
 
 document.write('END OF FILE REACHED');
