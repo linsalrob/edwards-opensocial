@@ -21,7 +21,18 @@
 </ModulePrefs>
 
 <Content type="html">
-  
+<body>
+<input name="name" id="name" />
+<input value="Invoke the Web Service"
+       type="button" 
+       onclick="sayHello($('name').value,$('result'))" />
+<div id="container">Result:
+<div id="result">
+</div>
+<div id="soap">
+</div>
+</div>
+</body>
 <![CDATA[
 <script type="text/javascript" src="Prototype.js"></script>
 <script type="text/javascript" src="ws_update.js"></script>
@@ -48,7 +59,6 @@ function getTranslation (peg, container) {
 	     var ret = 
 	       envelope.get_body().get_all_children()[0].
 	         get_all_children()[0].get_value();
-	         document.write(ret);
 	     container.innerHTML = ret;
 	//     $('soap').innerHTML = arguments[2].escapeHTML();
 	   }
