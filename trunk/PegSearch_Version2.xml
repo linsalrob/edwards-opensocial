@@ -52,7 +52,7 @@ function getTranslation (peg, container) {
 	     $('soap').innerHTML = arguments[2].escapeHTML();
 	     
 	     // ADDED to test var ret
-	     //document.write(ret);
+	     document.write(ret);
 	   }
 	);
 }
