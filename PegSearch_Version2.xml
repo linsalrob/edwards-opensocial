@@ -42,7 +42,7 @@ function getTranslation (peg, container) {
 	call.invoke_rpc(
 	  qn_op,
 	  new Array(
-	    {name:'get_translationRequest',value:peg}
+	    {name:'peg',value:peg}
 	   ),null,
 	   function(call,envelope) {
 	     var ret = 
