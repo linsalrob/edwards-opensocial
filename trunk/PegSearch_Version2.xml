@@ -33,7 +33,7 @@ var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
 
 var peg = "fig|83333.1.peg.1345";
   
-function getTranslation (peg, container) {
+function getTranslation (peg) {
 	var call = new WS.Call('/SeedWebServicesHandler'); 
 	var nsuri = url;
 	var qn_op = new WS.QName('get_translation',nsuri);
@@ -49,11 +49,13 @@ function getTranslation (peg, container) {
 	         get_all_children()[0].get_value();
 	     container.innerHTML = ret;
 	     $('soap').innerHTML = arguments[2].escapeHTML();
+	     
+	     document.write(ret);
 	   }
 	);
 }
 
-document.write(getTranslation(peg, result));
+document.write(getTranslation(peg));
 
 document.write('END OF FILE REACHED');
 /******************************************************************************/
