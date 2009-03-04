@@ -32,32 +32,43 @@ var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
 //http://seed-viewer.theseed.org/SeedWebServices#get_translation
 
 var peg = "fig|83333.1.peg.1345";
-
-var call = new WS.Call('/SeedWebServicesHandler'); 
-var nsuri = url;
-var qn_op = new WS.QName('get_translation',nsuri);
-var qn_op_resp = new WS.QName('get_translationResponse',nsuri);  
-call.invoke_rpc(
-  qn_op,
-  new Array(
-    {name:'get_translationRequest',value:peg}
-   ),null,
-   function(call,envelope) {
-     var ret = 
-       envelope.get_body().get_all_children()[0].
-         get_all_children()[0].get_value();
-     container.innerHTML = ret;
-     $('soap').innerHTML = arguments[2].escapeHTML();
-   }
-);
-
-function response() {
-	document.write(peg);
+  
+function getTranslation (peg, container) {
+	var call = new WS.Call('/SeedWebServicesHandler'); 
+	var nsuri = url;
+	var qn_op = new WS.QName('get_translation',nsuri);
+	var qn_op_resp = new WS.QName('get_translationResponse',nsuri);
+	call.invoke_rpc(
+	  qn_op,
+	  new Array(
+	    {name:'get_translationRequest',value:peg}
+	   ),null,
+	   function(call,envelope) {
+	     var ret = 
+	       envelope.get_body().get_all_children()[0].
+	         get_all_children()[0].get_value();
+	     container.innerHTML = ret;
+	     $('soap').innerHTML = arguments[2].escapeHTML();
+	   }
+	);
 }
-
-document.write(result);
+document.write('END OF FILE REACHED');
 /******************************************************************************/
 </script>]]>
+
+<body>
+<input name="name" id="name" />
+<input value="Invoke the Web Service"
+       type="button" 
+       onclick="sayHello($('name').value,$('result'))" />
+<div id="container">Result:
+<div id="result">
+</div>
+<div id="soap">
+</div>
+</div>
+</body>
+
 
 </Content>
 </Module>
