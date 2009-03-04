@@ -50,6 +50,7 @@ function getTranslation (peg) {
 	     container.innerHTML = ret;
 	     $('soap').innerHTML = arguments[2].escapeHTML();
 	     
+	     // ADDED to test var ret
 	     document.write(ret);
 	   }
 	);
@@ -57,7 +58,7 @@ function getTranslation (peg) {
 
 document.write(getTranslation(peg));
 
-document.write('END OF FILE REACHED');
+document.write('\nEND OF FILE REACHED');
 /******************************************************************************/
 </script>]]>
 
