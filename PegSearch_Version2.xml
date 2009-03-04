@@ -35,8 +35,8 @@ var peg = 'fig|83333.1.peg.1345';
 var result = '';
   
 function getTranslation (peg, container) {
-	var call = new WS.Call(''); 
-	var nsuri = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
+	var call = new WS.Call('/FIG/wsdl_seed.cgi'); 
+	var nsuri = 'http://ws.nmpdr.org';
 	var qn_op = new WS.QName('get_translation',nsuri);
 	var qn_op_resp = new WS.QName('get_translationResponse',nsuri);
 	call.invoke_rpc(
