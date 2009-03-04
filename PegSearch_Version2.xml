@@ -60,7 +60,7 @@ document.write('END OF FILE REACHED');
 <input name="name" id="name" />
 <input value="Invoke the Web Service"
        type="button" 
-       onclick="sayHello($('name').value,$('result'))" />
+       onclick="getTranslation($('name').value,$('result'))" />
 <div id="container">Result:
 <div id="result">
 </div>
