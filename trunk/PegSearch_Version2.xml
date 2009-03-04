@@ -55,7 +55,7 @@ function response() {
 	document.write(peg);
 }
 
-document.write(peg);
+document.write(result);
 /******************************************************************************/
 </script>]]>
 
