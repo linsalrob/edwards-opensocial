@@ -569,7 +569,7 @@ WS.Call.prototype = {
   }
 };
 
-/ ******************************************************************** /
+/********************************************************************/
 
 var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
 //http://seed-viewer.theseed.org/SeedWebServices#get_translation
