@@ -34,6 +34,14 @@
 var peg = 'fig|83333.1.peg.1345';
 var result = new Object;
   
+ var envelope = new SOAP.Envelope();
+var body = envelope.create_body();
+body.set_rpc( name:'peg ,value:'fig|83333.1.peg.1345'}
+  ), SOAP.NOENCODING
+); 
+  
+  
+  
 function getTranslation (peg, container) {
 	var call = new WS.Call('/SeedWebServicesHandler'); 
 	var nsuri = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
