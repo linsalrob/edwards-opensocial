@@ -35,10 +35,20 @@ var peg = 'fig|83333.1.peg.1345';
 var result = '';
   
 function getTranslation (peg, container) {
-	var call = new WS.Call('http://seed-viewer.theseed.org/SeedWebServices'); 
+	var call = new WS.Call('http://ws.nmpdr.org/FIG/wsdl_seed.cgi'); 
 	var nsuri = 'http://seed-viewer.theseed.org/SeedWebServices';
 	var qn_op = new WS.QName('get_translation',nsuri);
 	var qn_op_resp = new WS.QName('get_translationResponse',nsuri);
+	
+	var envelope = new SOAP.Envelope();
+	var body = envelope.create_body();
+	body.set_rpc(
+	  	new WS.QName('get_translation', 'urn:http://seed-viewer.theseed.org/SeedWebServices'),
+	  	new Array(
+	   		{name: new WS.QName('urn:http://seed-viewer.theseed.org/SeedWebServices'),value:peg}),
+	   		SOAP.NOENCODING
+	);
+	
 	call.invoke_rpc(
 	  qn_op,
 	  new Array(
