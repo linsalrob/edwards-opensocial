@@ -35,7 +35,7 @@ var peg = 'fig|83333.1.peg.1345';
 var result = '';
   
 function getTranslation (peg, container) {
-	var call = new WS.Call('http://ws.nmpdr.org/FIG/wsdl_seed.cgi'); 
+	var call = new WS.Call('http://seed-viewer.theseed.org/webservices_seed.cgi'); 
 	var nsuri = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
 	var qn_op = new WS.QName('get_translation',nsuri);
 	var qn_op_resp = new WS.QName('get_translationResponse',nsuri);
@@ -43,7 +43,7 @@ function getTranslation (peg, container) {
 	var envelope = new SOAP.Envelope();
 	var body = envelope.create_body();
 	body.set_rpc(
-	  	new WS.QName('get_translation', 'urn:http://seed-viewer.theseed.org/SeedWebServices'),
+	  	qn_op,
 	  	new Array(
 	   		{name:'peg',value:peg}),
 	   		SOAP.NOENCODING
