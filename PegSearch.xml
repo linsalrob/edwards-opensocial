@@ -52,7 +52,9 @@ function getTranslation (peg, container) {
 	var qn_op_resp = new WS.QName('get_corresponding_idsResponse',nsuri);
 	call.invoke_rpc(
 	  qn_op,
-	  peg='fig|83333.1.peg.1345',null,
+    	new Array(
+     	 {name:'peg',value:'fig|83333.1.peg.1345'}
+    	),null,
 	   function(call,envelope) {
 	   document.write("hello");
 	     var ret = 
