@@ -49,6 +49,8 @@ function getTranslation (peg, container) {
 	   		SOAP.NOENCODING
 	);
 	
+	document.write(body);
+	
 	call.invoke_rpc(
 	  qn_op,
 	  new Array(
