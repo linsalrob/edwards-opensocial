@@ -48,14 +48,14 @@ function getTranslation (peg, container) {
 	     var ret = 
 	       envelope.get_body().get_all_children()[0].
 	         get_all_children()[0].get_value();
-	     container.innerHTML = ret;
+	 //    container.innerHTML = ret;
 	//     $('soap').innerHTML = arguments[2].escapeHTML();
 	   }
 	);
 }
 
 
-getTranslation("fig|83333.1.peg.1345", result);
+getTranslation(peg, result);
 document.write(result);
 
 document.write('END OF FILE REACHED');
