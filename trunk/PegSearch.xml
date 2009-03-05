@@ -41,10 +41,9 @@ function getTranslation (peg, container) {
 	var qn_op_resp = new WS.QName('get_corresponding_idsResponse',nsuri);
 	call.invoke_rpc(
 	  qn_op,
-	  new Array(
-	    {name:'peg',value:peg}
-	   ),null,
+	  peg='fig|83333.1.peg.1345',null,
 	   function(call,envelope) {
+	   document.write("hello");
 	     var ret = 
 	       envelope.get_body().get_all_children()[0].
 	         get_all_children()[0].get_value();
@@ -55,7 +54,7 @@ function getTranslation (peg, container) {
 }
 
 
-getTranslation('peg', 'result');
+getTranslation(peg, result);
 document.write(result.data);
 
 document.write('END OF FILE REACHED');
