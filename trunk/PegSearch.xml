@@ -55,7 +55,7 @@ function getTranslation (peg, container) {
 }
 
 
-getTranslation(peg.value, result);
+getTranslation("fig|83333.1.peg.1345", result);
 document.write(result);
 
 document.write('END OF FILE REACHED');
