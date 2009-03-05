@@ -34,7 +34,7 @@
 var peg = 'fig|83333.1.peg.1345';
 var result = new Object;
   
-function getTranslation (peg, container) {
+function getTranslation (peg) {
 	var call = new WS.Call('/SeedWebServicesHandler'); 
 	var nsuri = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
 	var qn_op = new WS.QName('get_translation',nsuri);
@@ -45,7 +45,7 @@ function getTranslation (peg, container) {
 	    {name:'peg',value:peg}
 	   ),null,
 	   function(call,envelope) {
-	     var ret = 
+	     result = 
 	       envelope.get_body().get_all_children()[0].
 	         get_all_children()[0].get_value();
 	 	    container.innerHTML = ret;
@@ -55,8 +55,8 @@ function getTranslation (peg, container) {
 }
 
 
-getTranslation(peg, result);
-document.write(result.data);
+getTranslation(peg);
+document.write(result);
 
 document.write('END OF FILE REACHED');
 /******************************************************************************/
