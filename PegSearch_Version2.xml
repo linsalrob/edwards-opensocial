@@ -36,7 +36,7 @@ var result = '';
   
 function getTranslation (peg, container) {
 	var call = new WS.Call('http://seed-viewer.theseed.org/SeedWebServices'); 
-	var nsuri = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
+	var nsuri = 'http://seed-viewer.theseed.org/SeedWebServices';
 	var qn_op = new WS.QName('get_translation',nsuri);
 	var qn_op_resp = new WS.QName('get_translationResponse',nsuri);
 	call.invoke_rpc(
@@ -52,7 +52,6 @@ function getTranslation (peg, container) {
 	     $('soap').innerHTML = arguments[2].escapeHTML();
 	   }
 	);
-	document.write($('soap').innerHTML);
 }
 
 getTranslation(peg, result);
