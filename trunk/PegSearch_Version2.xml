@@ -45,7 +45,7 @@ function getTranslation (peg, container) {
 	body.set_rpc(
 	  	new WS.QName('get_translation', 'urn:http://seed-viewer.theseed.org/SeedWebServices'),
 	  	new Array(
-	   		{name: new WS.QName('urn:http://seed-viewer.theseed.org/SeedWebServices'),value:peg}),
+	   		{name:'peg',value:peg}),
 	   		SOAP.NOENCODING
 	);
 	
