@@ -36,9 +36,7 @@ var result = new Object;
   
  var envelope = new SOAP.Envelope();
 var body = envelope.create_body();
-body.set_rpc( name:'peg ,value:'fig|83333.1.peg.1345'}
-  ), SOAP.NOENCODING
-); 
+body.set_rpc(name='peg', value='fig|83333.1.peg.1345'); 
   
   
   
