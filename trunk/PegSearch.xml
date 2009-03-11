@@ -61,12 +61,25 @@ function getTranslation (peg, container) {
 	       envelope.get_body().get_all_children()[0].
 	         get_all_children()[0].get_value();
 	 	    container.innerHTML = ret;
-	     	document.write(arguments[2]);
+	     	$('soap').innerHTML = arguments[2].escapeHTML();
 	   }
 	);
 }
 
+var MyHandler = Class.create();
+MyHandler.prototype = (new WS.Handler()).extend({
+  on_request : function(envelope) {
+     // pre-request processing
+  },
+  on_response : function(call,envelope) {
+     // post-response, pre-callback processing
+  },
+  on_error : function(call,envelope) {
+  }
+});
 
+var call = new WS.Call(...);
+call.add_handler(new MyHandler());
 getTranslation(peg, result);
 document.write(result.data);
 
