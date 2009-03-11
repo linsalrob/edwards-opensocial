@@ -66,22 +66,9 @@ function getTranslation (peg, container) {
 	);
 }
 
-var MyHandler = Class.create();
-MyHandler.prototype = (new WS.Handler()).extend({
-  on_request : function(envelope) {
-     // pre-request processing
-  },
-  on_response : function(call,envelope) {
-     // post-response, pre-callback processing
-  },
-  on_error : function(call,envelope) {
-  }
-});
 
-var call = new WS.Call();
-call.add_handler(new MyHandler());
-getTranslation(peg, result);
-document.write(result.data);
+getTranslation(peg, container);
+document.write(conatainer.data);
 
 document.write('END OF FILE REACHED');
 /******************************************************************************/
