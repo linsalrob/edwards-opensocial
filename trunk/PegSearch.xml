@@ -67,8 +67,8 @@ function getTranslation (peg, container) {
 }
 
 
-getTranslation(peg, container);
-document.write(conatainer.data);
+getTranslation(peg, result);
+document.write(result.data);
 
 document.write('END OF FILE REACHED');
 /******************************************************************************/
