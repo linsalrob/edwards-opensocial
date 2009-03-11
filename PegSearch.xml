@@ -34,10 +34,17 @@
 var req;
 if (window.XMLHttpRequest) { // Non-IE browsers
   req = new XMLHttpRequest();
-  alert('non ie');
 } else if (window.ActiveXObject) { // IE
   req = new ActiveXObject("Microsoft.XMLHTTP");
 }
+
+try {
+        req.open("GET", url, true);
+      } catch (e) {
+        alert(e);
+      }
+
+
 
 
 
