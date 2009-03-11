@@ -78,7 +78,7 @@ MyHandler.prototype = (new WS.Handler()).extend({
   }
 });
 
-var call = new WS.Call(...);
+var call = new WS.Call();
 call.add_handler(new MyHandler());
 getTranslation(peg, result);
 document.write(result.data);
