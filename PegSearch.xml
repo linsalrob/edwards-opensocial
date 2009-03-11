@@ -30,6 +30,7 @@
 
 //var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
 //http://seed-viewer.theseed.org/SeedWebServices#get_translation
+var peg = "fig|83333.1.peg.1345";
 
 var req;
 if (window.XMLHttpRequest) { // Non-IE browsers
@@ -39,16 +40,17 @@ if (window.XMLHttpRequest) { // Non-IE browsers
 }
 
 try {
-        req.open("POST", 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi', true);
+        req.open("GET", 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi', true);
       } catch (e) {
         alert(e);
       }
+      req.send(peg);
 
 
 
 
 
-document.write('END OF FILE REACHED');
+document.write(peg);
 /******************************************************************************/
 </script>]]>
 
