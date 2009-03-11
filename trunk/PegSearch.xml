@@ -39,7 +39,7 @@ if (window.XMLHttpRequest) { // Non-IE browsers
 }
 
 try {
-        req.open("GET", 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi', true);
+        req.open("POST", 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi', true);
       } catch (e) {
         alert(e);
       }
