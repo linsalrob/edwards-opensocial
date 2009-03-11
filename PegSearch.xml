@@ -44,7 +44,11 @@ try {
       } catch (e) {
         alert(e);
       }
+      try{
       req.send(peg);
+      } catch (e) {
+      	alert (e);
+      	}
 
 
 
