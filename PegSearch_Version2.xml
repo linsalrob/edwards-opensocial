@@ -27,10 +27,6 @@
 <script type="text/javascript" src="ws_update.js"></script>
 <script language="Javascript" type="text/javascript">
 /****************************************************************************/
-
-//var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
-//http://seed-viewer.theseed.org/SeedWebServices#get_translation
-
 var peg = 'fig|83333.1.peg.1345';
 var result = '';
   
@@ -40,16 +36,12 @@ function getTranslation (peg, container) {
 	var qn_op = new WS.QName('get_translation',nsuri);
 	var qn_op_resp = new WS.QName('get_translationResponse',nsuri);
 	
-	var envelope = new SOAP.Envelope();
-	var body = envelope.create_body();
 	body.set_rpc(
 	  	qn_op,
 	  	new Array(
 	   		{name:'peg',value:peg}),
 	   		SOAP.NOENCODING
 	);
-	
-	document.write(body);
 	
 	call.invoke_rpc(
 	  qn_op,
@@ -66,7 +58,12 @@ function getTranslation (peg, container) {
 	);
 }
 
-getTranslation(peg, result);
+try {
+	getTranslation(peg, result);
+catch(e) {
+	alert(e);
+}
+
 document.write(result);
 
 document.write('END OF FILE REACHED');
