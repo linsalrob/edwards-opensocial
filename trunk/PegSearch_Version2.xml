@@ -31,23 +31,16 @@ var peg = 'fig|83333.1.peg.1345';
 var result = '';
   
 function getTranslation (peg, container) {
-	var call = new WS.Call('http://seed-viewer.theseed.org/webservices_seed.cgi'); 
-	var nsuri = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
+	var call = new WS.Call('FIG/wsdl_seed.cgi'); 
+	var nsuri = 'http://ws.nmpdr.org/';
 	var qn_op = new WS.QName('get_translation',nsuri);
 	var qn_op_resp = new WS.QName('get_translationResponse',nsuri);
-	
-	body.set_rpc(
-	  	qn_op,
-	  	new Array(
-	   		{name:'peg',value:peg}),
-	   		SOAP.NOENCODING
-	);
 	
 	call.invoke_rpc(
 	  qn_op,
 	  new Array(
 	    {name:'peg',value:peg}
-	   ),null,
+	   ),SOAP.NOENCODING,
 	   function(call,envelope) {
 	     var ret = 
 	       envelope.get_body().get_all_children()[0].
