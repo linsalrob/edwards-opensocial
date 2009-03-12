@@ -37,7 +37,8 @@ function getTranslation (peg, container) {
 	var qn_op_resp = new WS.QName('get_translationResponse',nsuri);
 	
 	var MyHandler = Class.create();
-	MyHandler.prototype = (new WS.Handler()).extend({
+	bject.extend(MyHandler.prototype, WS.Handler.prototype);
+	Object.extend(MyHandler.prototype,({
   		on_request : function(envelope) {
      		alert('PRE');
   		},
