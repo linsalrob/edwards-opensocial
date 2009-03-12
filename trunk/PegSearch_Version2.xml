@@ -48,7 +48,7 @@ function getTranslation (peg, container) {
   		on_error : function(call,envelope) {
   			alert('ERROR');
   		}
-	});
+	}));
 		
 	call.add_handler(new MyHandler());	
 		
