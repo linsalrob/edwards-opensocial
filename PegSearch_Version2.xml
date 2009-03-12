@@ -40,13 +40,13 @@ function getTranslation (peg, container) {
 	Object.extend(MyHandler.prototype, WS.Handler.prototype);
 	Object.extend(MyHandler.prototype,({
   		on_request : function(envelope) {
-     		alert('PRE');
+     		alert('SOAPHANDLER: PRE');
   		},
   		on_response : function(call,envelope) {
-     		alert('POST');
+     		alert('SOAPHANDLER: POST');
   		},
   		on_error : function(call,envelope) {
-  			alert('ERROR');
+  			alert('SOAPHANDLER: ERROR');
   		}
 	}));
 		
@@ -74,8 +74,6 @@ try {
 }
 
 alert('END OF FILE');
-
-document.write('END OF FILE REACHED');
 /******************************************************************************/
 </script>]]>
 
