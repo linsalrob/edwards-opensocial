@@ -53,12 +53,11 @@ function getTranslation (peg, container) {
 
 try {
 	getTranslation(peg, result);
-catch(e) {
+} catch(e) {
 	alert(e);
 }
 
 alert('END OF FILE');
-document.write(result);
 
 document.write('END OF FILE REACHED');
 /******************************************************************************/
