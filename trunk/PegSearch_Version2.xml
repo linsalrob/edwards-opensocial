@@ -36,6 +36,21 @@ function getTranslation (peg, container) {
 	var qn_op = new WS.QName('get_translation',nsuri);
 	var qn_op_resp = new WS.QName('get_translationResponse',nsuri);
 	
+	var MyHandler = Class.create();
+	MyHandler.prototype = (new WS.Handler()).extend({
+  		on_request : function(envelope) {
+     		alert('PRE');
+  		},
+  		on_response : function(call,envelope) {
+     		alert('POST');
+  		},
+  		on_error : function(call,envelope) {
+  			alert('ERROR');
+  		}
+	});
+		
+	call.add_handler(new MyHandler());	
+		
 	call.invoke_rpc(
 	  qn_op,
 	  new Array(
