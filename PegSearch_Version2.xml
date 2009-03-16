@@ -31,8 +31,8 @@ var peg = 'fig|83333.1.peg.1345';
 var result = '';
 //http://seed-viewer.theseed.org/SeedWebServices
 function getTranslation (peg, container) {
-	var call = new WS.Call('http://seed-viewer.theseed.org/SeedWebServices'); 
-	var nsuri = 'http://seed-viewer.theseed.org/SeedWebServices';
+	var call = new WS.Call('/SeedWebServices'); 
+	var nsuri = 'http://seed-viewer.theseed.org';
 	var qn_op = new WS.QName('get_translationRequest',nsuri);
 	var qn_op_resp = new WS.QName('get_translationResponse',nsuri);
 	
