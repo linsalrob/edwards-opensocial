@@ -33,7 +33,7 @@ var result = '';
 function getTranslation (peg, container) {
 	var call = new WS.Call('FIG/wsdl_seed.cgi'); 
 	var nsuri = 'http://ws.nmpdr.org/';
-	var qn_op = new WS.QName('get_translation',nsuri);
+	var qn_op = new WS.QName('get_translationRequest',nsuri);
 	var qn_op_resp = new WS.QName('get_translationResponse',nsuri);
 	
 	var MyHandler = Class.create();
