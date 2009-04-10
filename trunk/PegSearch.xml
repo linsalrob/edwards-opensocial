@@ -32,7 +32,7 @@
 //http://seed-viewer.theseed.org/SeedWebServices#get_translation
 var peg = "fig|83333.1.peg.1345";
 // var url = "http://edwards.sdsu.edu/SimpleMath.wsdl";
-var url = "http://ws.nmpdr.org.sdsu.edu/FIG/wsdl_seed.cgi";
+var url = "http://edwards.sdsu.edu/SimpleMath.wsdl";
 
 var req;
 if (window.XMLHttpRequest) { // Non-IE browsers
