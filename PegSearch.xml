@@ -39,8 +39,11 @@ if (window.XMLHttpRequest) { // Non-IE browsers
   req = new ActiveXObject("Microsoft.XMLHTTP");
 }
 
+// http://ws.nmpdr.org.sdsu.edu/FIG/wsdl_seed.cgi
+// I made a change in below Vasken to try to use wsdl hosted locally
+
 try {
-        req.open("GET", 'http://ws.nmpdr.org.sdsu.edu/FIG/wsdl_seed.cgi', true);
+        req.open("GET", 'http://edwards.sdsu.edu/SimpleMath.wsdl', true);
       } catch (e) {
         alert(e);
       }
