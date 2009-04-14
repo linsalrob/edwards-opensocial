@@ -39,7 +39,7 @@ var data = { data1 : peg };
 function makeRequest(url, postdata) {
    var envelope = new SOAP.Envelope();
    var body = envelope.create_body();
-   var el = body.create_child(new WS.QName('getTranslation','url'));
+   var el = body.create_child(new WS.QName('get_translation','url'));
    el.create_child(new WS.QName('peg','url')).set_value(peg);
    
    var params = {};
