@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <Module>
 
 <ModulePrefs
@@ -20,9 +21,9 @@
 		<Require feature="opensocial-0.7" />
 </ModulePrefs>
 
-<Content type="html">
+<Content type="html"> <![CDATA[
 
-<![CDATA[
+/*
 <script type="text/javascript" src="Prototype.js"></script>
 <script type="text/javascript" src="ws_update.js"></script>
 <script language="Javascript" type="text/javascript">
@@ -58,7 +59,10 @@ try {
 
 document.write(url);
 //document.write(peg);
-</script>]]>
+</script>
+
+*/
+]]>
 
 </Content>
 </Module>
