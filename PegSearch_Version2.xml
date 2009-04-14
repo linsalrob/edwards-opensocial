@@ -30,17 +30,22 @@
 
 //var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
 //var url = 'http://seed-viewer.theseed.org/SeedWebServices#get_translation';
+
 var peg = "fig|83333.1.peg.1345";
-// var url = "http://edwards.sdsu.edu/SimpleMath.wsdl";
 var url = "http://ws.nmpdr.org.sdsu.edu/FIG/wsdl_seed.cgi";
 
 var data = { data1 : peg };
 
 function makeRequest(url, postdata) {
+   var envelope = new SOAP.Envelope();
+   var body = envelope.create_body();
+   var el = body.create_child(new WS.QName('getTranslation','url'));
+   el.create_child(new WS.QName('peg','url')).set_value(peg);
+   
    var params = {};
    postdata = gadgets.io.encodeValues(postdata);
    params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.POST;
-   params[gadgets.io.RequestParameters.POST_DATA]= postdata;
+   params[gadgets.io.RequestParameters.POST_DATA]= el;
    gadgets.io.makeRequest(url, response, params);
  };
  
