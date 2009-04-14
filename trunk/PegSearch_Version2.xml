@@ -21,61 +21,47 @@
 </ModulePrefs>
 
 <Content type="html">
-  
+
 <![CDATA[
 <script type="text/javascript" src="Prototype.js"></script>
 <script type="text/javascript" src="ws_update.js"></script>
 <script language="Javascript" type="text/javascript">
 /****************************************************************************/
-var peg = 'fig|83333.1.peg.1345';
-var result = '';
-//http://seed-viewer.theseed.org/SeedWebServices
-function getTranslation (peg, container) {
-	var call = new WS.Call('/SeedWebServices'); 
-	var nsuri = 'http://seed-viewer.theseed.org';
-	var qn_op = new WS.QName('get_translationRequest',nsuri);
-	var qn_op_resp = new WS.QName('get_translationResponse',nsuri);
-	
-	var MyHandler = Class.create();
-	Object.extend(MyHandler.prototype, WS.Handler.prototype);
-	Object.extend(MyHandler.prototype,({
-  		on_request : function(envelope) {
-     		alert('SOAPHANDLER: PRE');
-  		},
-  		on_response : function(call,envelope) {
-     		alert('SOAPHANDLER: POST');
-  		},
-  		on_error : function(call,envelope) {
-  			alert('SOAPHANDLER: ERROR');
-  		}
-	}));
-		
-	call.add_handler(new MyHandler());	
-		
-	call.invoke_rpc(
-	  qn_op,
-	  new Array(
-	    {name:'peg',value:peg}
-	   ),SOAP.NOENCODING,
-	   function(call,envelope) {
-	     var ret = 
-	       envelope.get_body().get_all_children()[0].
-	         get_all_children()[0].get_value();
-	     container.innerHTML = ret;
-	     $('soap').innerHTML = arguments[2].escapeHTML();
-	   }
-	);
+
+//var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
+//http://seed-viewer.theseed.org/SeedWebServices#get_translation
+var peg = "fig|83333.1.peg.1345";
+// var url = "http://edwards.sdsu.edu/SimpleMath.wsdl";
+var url = "http://ws.nmpdr.org.sdsu.edu/FIG/wsdl_seed.cgi";
+
+var req;
+if (window.XMLHttpRequest) { // Non-IE browsers
+  req = new XMLHttpRequest();
+} else if (window.ActiveXObject) { // IE
+  req = new ActiveXObject("Microsoft.XMLHTTP");
 }
+
+// I made a change in below Vasken to try to use wsdl hosted locally
 
 try {
-	getTranslation(peg, result);
-} catch(e) {
-	alert(e);
-}
+        req.open("POST", url, false);
+      } catch (e) {
+        alert(e);
+      }
+      try{
+      req.send(peg);
+      } catch (e) {
+      	alert (e);
+      	}
 
-alert('END OF FILE');
+
+
+
+document.write(url);
+//document.write(peg);
 /******************************************************************************/
 </script>]]>
 
 </Content>
+
 </Module>
