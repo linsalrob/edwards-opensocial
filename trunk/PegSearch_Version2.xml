@@ -34,9 +34,7 @@ var peg = "fig|83333.1.peg.1345";
 // var url = "http://edwards.sdsu.edu/SimpleMath.wsdl";
 var url = "http://ws.nmpdr.org.sdsu.edu/FIG/wsdl_seed.cgi";
 
-var data = {
-   data1 : peg
-};
+var data = { data1 : peg };
 
 function makeRequest(url, postdata) {
    var params = {};
@@ -53,6 +51,7 @@ function response(obj) {
 makeRequest(url, data);
 
 document.write(url);
+
 /******************************************************************************/
 </script>]]>
 
