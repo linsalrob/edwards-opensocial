@@ -58,7 +58,7 @@ try {
 
 
 document.write(url);
-//document.write(peg);
+document.write(peg);
 </script>
 
 ]]>
