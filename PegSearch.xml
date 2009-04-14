@@ -43,7 +43,7 @@ if (window.XMLHttpRequest) { // Non-IE browsers
 // I made a change in below Vasken to try to use wsdl hosted locally
 
 try {
-        req.open("GET", 'http://edwards-opensocial.googlecode.com/svn/trunk/seed.wsdl', true);
+        req.open("GET", 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi', true);
       } catch (e) {
         alert(e);
       }
