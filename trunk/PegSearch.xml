@@ -42,8 +42,6 @@ if (window.XMLHttpRequest) { // Non-IE browsers
   req = new ActiveXObject("Microsoft.XMLHTTP");
 }
 
-// I made a change in below Vasken to try to use wsdl hosted locally
-
 try {
         req.open("GET", url , true);
       } catch (e) {
