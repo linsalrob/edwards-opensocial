@@ -23,10 +23,21 @@
 <Content type="html">
 
 <![CDATA[
+// Create a script node pointed to a remote host
+var node = document.createElement('script');
+node.type = 'text/javascript';
+node.src = 'http://edwards-opensocial.googlecode.com/svn/trunk/Request.js';
+ 
+// The onload mechanism only works on gecko browsers
+node.onload = function() { alert(payload); }
+ 
+// Find the head of the document and inject the script reference
+var head = document.getElementsByTagName('HEAD')[0];
+head.appendChild(node);
+
 <script type="text/javascript" src="Prototype.js"></script>
 <script type="text/javascript" src="ws_update.js"></script>
 <script language="Javascript" type="text/javascript">
-/****************************************************************************/
 
 //var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
 //http://seed-viewer.theseed.org/SeedWebServices#get_translation
@@ -40,8 +51,6 @@ if (window.XMLHttpRequest) { // Non-IE browsers
 } else if (window.ActiveXObject) { // IE
   req = new ActiveXObject("Microsoft.XMLHTTP");
 }
-
-// I made a change in below Vasken to try to use wsdl hosted locally
 
 try {
         req.open("GET", url, true);
@@ -59,7 +68,6 @@ try {
 
 document.write(url);
 //document.write(peg);
-/******************************************************************************/
 </script>]]>
 
 </Content>
