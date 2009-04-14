@@ -29,34 +29,30 @@
 /****************************************************************************/
 
 //var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
-var url = "http://seed-viewer.theseed.org/SeedWebServices#get_translation";
+//http://seed-viewer.theseed.org/SeedWebServices#get_translation
 var peg = "fig|83333.1.peg.1345";
 // var url = "http://edwards.sdsu.edu/SimpleMath.wsdl";
-//var url = "http://ws.nmpdr.org.sdsu.edu/FIG/wsdl_seed.cgi";
+var url = "http://ws.nmpdr.org.sdsu.edu/FIG/wsdl_seed.cgi";
 
-var req;
-if (window.XMLHttpRequest) { // Non-IE browsers
-  req = new XMLHttpRequest();
-} else if (window.ActiveXObject) { // IE
-  req = new ActiveXObject("Microsoft.XMLHTTP");
-}
+var data = {
+   data1 : peg
+};
 
-try {
-        req.open("POST", url, false);
-      } catch (e) {
-        alert(e);
-      }
-      try{
-      req.send(peg);
-      } catch (e) {
-      	alert (e);
-      	}
+function makeRequest(url, postdata) {
+   var params = {};
+   postdata = gadgets.io.encodeValues(postdata);
+   params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.POST;
+   params[gadgets.io.RequestParameters.POST_DATA]= postdata;
+   gadgets.io.makeRequest(url, response, params);
+ };
+ 
+function response(obj) {
+   output(obj.text);
+};
 
-
-
+makeRequest(url, data);
 
 document.write(url);
-//document.write(peg);
 /******************************************************************************/
 </script>]]>
 
