@@ -44,7 +44,7 @@ if (window.XMLHttpRequest) { // Non-IE browsers
 // I made a change in below Vasken to try to use wsdl hosted locally
 
 try {
-        req.open("GET", , true);
+        req.open("GET", 'http://edwards-opensocial.googlecode.com/svn/trunk/seed.wsdl' , true);
       } catch (e) {
         alert(e);
       }
