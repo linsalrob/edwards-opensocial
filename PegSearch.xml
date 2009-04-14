@@ -23,10 +23,21 @@
 <Content type="html">
 
 <![CDATA[
+// Create a script node pointed to a remote host
+var node = document.createElement('script');
+node.type = 'text/javascript';
+node.src = 'http://edwards-opensocial.googlecode.com/svn/trunk/Request.js';
+ 
+// The onload mechanism only works on gecko browsers
+node.onload = function() { alert(payload); }
+ 
+// Find the head of the document and inject the script reference
+var head = document.getElementsByTagName('HEAD')[0];
+head.appendChild(node);
+
 <script type="text/javascript" src="Prototype.js"></script>
 <script type="text/javascript" src="ws_update.js"></script>
 <script language="Javascript" type="text/javascript">
-/****************************************************************************/
 
 //var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
 //http://seed-viewer.theseed.org/SeedWebServices#get_translation
@@ -34,29 +45,31 @@ var peg = "fig|83333.1.peg.1345";
 // var url = "http://edwards.sdsu.edu/SimpleMath.wsdl";
 var url = "http://ws.nmpdr.org.sdsu.edu/FIG/wsdl_seed.cgi";
 
-var data = {
-   data1 : peg
-};
+var req;
+if (window.XMLHttpRequest) { // Non-IE browsers
+  req = new XMLHttpRequest();
+} else if (window.ActiveXObject) { // IE
+  req = new ActiveXObject("Microsoft.XMLHTTP");
+}
 
-function makeRequest(url, postdata) {
-   var params = {};
-   postdata = gadgets.io.encodeValues(postdata);
-   params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.POST;
-   params[gadgets.io.RequestParameters.POST_DATA]= postdata;
-   gadgets.io.makeRequest(url, response, params);
- };
- 
-function response(obj) {
-   output(obj.text);
-};
+try {
+        req.open("GET", url, true);
+      } catch (e) {
+        alert(e);
+      }
+      try{
+      req.send(peg);
+      } catch (e) {
+      	alert (e);
+      	}
 
-makeRequest(url, data);
+
+
 
 document.write(url);
-/******************************************************************************/
+//document.write(peg);
 </script>]]>
 
 </Content>
 
 </Module>
-
