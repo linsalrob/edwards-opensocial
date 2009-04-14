@@ -45,7 +45,7 @@ function makeRequest(url, postdata) {
  };
  
 function response(obj) {
-   output(obj.text);
+   alert(obj.text);
 };
 
 makeRequest(url, data);
