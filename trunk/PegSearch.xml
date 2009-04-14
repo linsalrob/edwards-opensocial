@@ -44,7 +44,7 @@ if (window.XMLHttpRequest) { // Non-IE browsers
 // I made a change in below Vasken to try to use wsdl hosted locally
 
 try {
-        req.open("POST", url, false);
+        req.open("GET", url, true);
       } catch (e) {
         alert(e);
       }
@@ -62,9 +62,6 @@ document.write(url);
 /******************************************************************************/
 </script>]]>
 
-</Content>
-<Content>
-<!-- ALm6fM2czVAM9aOGp8NrQ89wTuU7ETLUcNyN1hhSaA0jaHmLlscxHjR9zAIFnZgOL_gUM2qkotwBgyRTVnvBhfbtLuJSEzoyvMYFe4kTfU-cEVQFoYx04v9C4uFhfvaZ8dxLQYy_7Rxp01dFxFQlKuLm4qs7hnxbSyFoYqDWH5oaWY7pQQLHnWc= -->
 </Content>
 
 </Module>
