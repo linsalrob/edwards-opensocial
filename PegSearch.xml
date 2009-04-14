@@ -31,7 +31,7 @@
 //http://seed-viewer.theseed.org/SeedWebServices#get_translation
 var peg = "fig|83333.1.peg.1345";
 // var url = "http://edwards.sdsu.edu/SimpleMath.wsdl";
-//var url = "http://ws.nmpdr.org.sdsu.edu/FIG/wsdl_seed.cg";
+//var url = "http://ws.nmpdr.org.sdsu.edu/FIG/wsdl_seed.cgi";
 
 var req;
 if (window.XMLHttpRequest) { // Non-IE browsers
@@ -43,7 +43,7 @@ if (window.XMLHttpRequest) { // Non-IE browsers
 // I made a change in below Vasken to try to use wsdl hosted locally
 
 try {
-        req.open("GET", 'http://pipeline3.acel.sdsu.edu:7000/gadgets/ifr?url=http://pipeline3.acel.sdsu.edu/PegSearch.xml', true);
+        req.open("GET", 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi', true);
       } catch (e) {
         alert(e);
       }
