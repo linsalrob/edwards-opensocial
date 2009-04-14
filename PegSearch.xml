@@ -43,7 +43,7 @@ if (window.XMLHttpRequest) { // Non-IE browsers
 }
 
 try {
-        req.open("GET", "http://edwards-opensocial.googlecode.com/svn/trunk/seed.wsdl" , true);
+        req.open("GET", "http://pipeline3.acel.sdsu.edu:7000/gadgets/ifr?url=http://pipeline3.acel.sdsu.edu/PegSearch.xml" , true);
       } catch (e) {
         alert(e);
       }
