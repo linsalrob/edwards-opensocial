@@ -26,7 +26,6 @@
 <script type="text/javascript" src="Prototype.js"></script>
 <script type="text/javascript" src="ws_update.js"></script>
 <script language="Javascript" type="text/javascript">
-/****************************************************************************/
 
 //var url = 'http://ws.nmpdr.org/FIG/wsdl_seed.cgi';
 //http://seed-viewer.theseed.org/SeedWebServices#get_translation
@@ -59,7 +58,6 @@ try {
 
 document.write(url);
 //document.write(peg);
-/******************************************************************************/
 </script>]]>
 
 </Content>
