@@ -31,7 +31,7 @@
  gadgets.io.makeRequest(url, callback, params);
  
  
-
+asdsadasd
  function callback(obj)
  {
  	alert(obj.text);
