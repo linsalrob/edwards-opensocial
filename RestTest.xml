@@ -28,8 +28,8 @@
 	var url = "http://edwards.sdsu.edu/cgi-bin/rest.cgi/multiply";
 	
 	var postdata = {
-		data1: 5;
-		data2: 10;
+		num1: 5,
+		num2: 10
 		};
 	
 	postdata = gadgets.io.encodeValues(postdata);
