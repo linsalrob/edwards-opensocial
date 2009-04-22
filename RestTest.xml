@@ -27,14 +27,14 @@
 
 	var url = "http://edwards.sdsu.edu/cgi-bin/rest.cgi/multiply";
 	
-	var postdata = "/3/4";
+	var parameters = "/3/4";
 	
-	//postdata = gadgets.io.encodeValues(postdata);
+	//postdata = gadgets.io.encodeValues(parameters);
 	
 	var params = {};
 	params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 	params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.POST;
-	params[gadgets.io.RequestParameters.POST_DATA]= postdata;
+	params[gadgets.io.RequestParameters.POST_DATA]= parameters;
 	
 	gadgets.io.makeRequest(url, returnFunction, params);
  
