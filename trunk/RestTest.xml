@@ -31,7 +31,7 @@
 		"/3/4"
 		};
 	
-	postdata = gadgets.io.encodeValues(postdata);
+	//postdata = gadgets.io.encodeValues(postdata);
 	
 	var params = {};
 	params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
