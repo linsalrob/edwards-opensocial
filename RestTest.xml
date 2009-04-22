@@ -28,7 +28,7 @@
 	var url = "http://edwards.sdsu.edu/cgi-bin/rest.cgi/multiply";
 	
 	var postdata = {
-		num1: 5,
+		num1: 3,
 		num2: 10
 		};
 	
