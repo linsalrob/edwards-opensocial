@@ -28,7 +28,7 @@
 	var url = "http://edwards.sdsu.edu/cgi-bin/rest.cgi/name/fred";
  var params = {};
  params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
- gadgets.io.makeRequest(url, callback() {}, params);
+ gadgets.io.makeRequest(url, callback, params);
  
  
 
