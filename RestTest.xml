@@ -42,6 +42,7 @@
 	
 	gadgets.io.makeRequest(url, returnFunction, params);
  
+ adasdasd
  
 	function returnFunction(obj)
 	{
