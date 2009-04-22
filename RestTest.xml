@@ -26,15 +26,16 @@
 <script language="Javascript" type="text/javascript">
 
 	var url = "http://edwards.sdsu.edu/cgi-bin/rest.cgi/multiply";
- var params = {};
- params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
- gadgets.io.makeRequest(url, returnFunction, params);
+	var params = {};
+	params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+	params[gadgets.io.RequestParameters.METHOD_TYPE] = gadgets.io.MethodType.POST;
+	gadgets.io.makeRequest(url, returnFunction, params);
  
  
- function returnFunction(obj)
- {
- 	alert(obj.text);
- };
+	function returnFunction(obj)
+	{
+		alert(obj.text);
+	};
 
 
 
