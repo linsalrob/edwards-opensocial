@@ -26,9 +26,19 @@
 <script language="Javascript" type="text/javascript">
 
 	var url = "http://edwards.sdsu.edu/cgi-bin/rest.cgi/multiply";
+	
+	var postdata = {
+		data1: 5;
+		data2: 10;
+		};
+	
+	postdata = gadgets.io.encodeValues(postdata);
+	
 	var params = {};
 	params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
-	params[gadgets.io.RequestParameters.METHOD_TYPE] = gadgets.io.MethodType.POST;
+	params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.POST;
+	
+	
 	gadgets.io.makeRequest(url, returnFunction, params);
  
  
