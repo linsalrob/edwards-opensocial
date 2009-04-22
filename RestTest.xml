@@ -2,10 +2,10 @@
 <Module>
 
 <ModulePrefs
-		title="PEG Search"
-		directory_title="Edwards Lab PEG Search"
+		title="REST Test"
+		directory_title="REST Test"
 		title_url=""
-		description="PEG Search"
+		description="REST Test"
 		author="Vasken K. and Matt S."
 		author_affiliation="SDSU"
 		author_location="San Diego, CA"
