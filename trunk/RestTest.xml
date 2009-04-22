@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+
+<ModulePrefs
+		title="PEG Search"
+		directory_title="Edwards Lab PEG Search"
+		title_url=""
+		description="PEG Search"
+		author="Vasken K. and Matt S."
+		author_affiliation="SDSU"
+		author_location="San Diego, CA"
+		author_email="skinien@cox.net"
+		screenshot=""
+		thumbnail="http://i74.photobucket.com/albums/i261/skinien/SDSU.jpg"
+		height="200"
+		width="200"
+		scrolling="true"
+		render_inline="optional"
+		category="tools">
+		<Require feature="opensocial-0.7" />
+</ModulePrefs>
+
+<Content type="html">
+
+<![CDATA[
+
+	var url = "http://edwards.sdsu.edu/cgi-bin/rest.cgi/name/fred";
+ var params = {};
+ params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+ gadgets.io.makeRequest(url, callback() {}, params);
+ 
+ 
+
+ function callback(obj)
+ {
+ 	alert(obj.text);
+ };
+
+
+
+
+
+]]>
+
+</Content>
+
+</Module>
