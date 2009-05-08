@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+    <ModulePrefs
+            title="Search SEED Genomes"
+            title_url="http://www.theseed.org/"
+            author="Rob Edwards"
+            author_email="raedwards@gmail.com"
+            description="A demonstration SEED Web services Open Social interaction">
+        <Require feature="opensocial-0.8" />
+        <Locale lang="en" country="US" />
+        <Locale lang="en" country="GB" />
+        <Icon>http://www.theseed.org/w/skins/common/images/wiki.png</Icon>
+    </ModulePrefs>
+    <Content type="html" view="canvas"><![CDATA[<!-- Get the genomes and create a list -->
+<div>
+   <div>
+    <span id='genomes'></span>
+  </div>
+	<button onclick='showSearch();'>Choose a genome</button>
+  <div>
+  	<span id='searchBox'></span>
+  </div>
+  <div>
+  	<span id='results'></span>
+  </div>
+</div>
+<script type='text/javascript'>
+
+gadgets.util.registerOnLoadHandler(init);
+
+var params = {};
+params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.POST;
+
+var url = "http://bioseed.mcs.anl.gov/~redwards/FIG/rest_seed.cgi";
+
+function init() 
+{
+	displayGenomesHtml();
+	//multiply();
+	//returnNumbers();
+};
+ 
+function displayGenomesHtml() {      
+    
+      document.getElementById('genomes').innerHTML = "Getting all genomes from the SEED";
+      
+      // get all the genomes      
+      var myurl = url + "/genomes/complete//Bacteria";
+ 	  gadgets.io.makeRequest(myurl, genomeSelectList, params);
+ }
+ 
+ function genomeSelectList(obj) {
+
+	var json = JSON.parse(obj.text);
+ 	var html = [];
+    html.push("<select id='genome'>");
+
+//    for (var g in json.result) {
+//    	id = json.result[g][0];
+//    	name = json.result[g][1];
+//    	html.push('<option value="', id, '">', name, '</option>');
+//    }	 
+
+    for (g in json.result)
+    	html.push('<option value="', g, '">', json.result[g], '</option>');
+    	 
+    
+    html.push("</select>");
+    document.getElementById('genomes').innerHTML = html.join('');
+ };
+
+function showSearch() {
+    var html = [];
+    html.push("<input type='text' size='25' id='searchTerm' onSubmit='searchGenome()' />");
+    html.push("	<button onclick='searchGenome();'>Search that genome</button>");
+    html.push("<br />Enter a term to search and press enter");
+	document.getElementById('searchBox').innerHTML = html.join('');
+};
+
+function searchGenome() {
+	var searchTerm = document.getElementById('searchTerm').value;
+    var genome = document.getElementById('genome').value;
+    document.getElementById('searchBox').innerHTML = "Searching for " + searchTerm + " in " + genome;
+    
+    var myurl = url + "/search_genome/" + genome + "/" + searchTerm;
+    
+    // document.getElementById('results').innerHTML = "url : " + myurl;
+    
+    gadgets.io.makeRequest(myurl, searchResults, params);
+    
+}
+
+function searchResults(obj) {
+	var json = JSON.parse(obj.text);
+ 	var html = [];
+	
+	html.push("got the results");
+	
+	html.push("<table>");
+	for (r in json.result) {
+		html.push('<tr><td><a href="http://www.theseed.org/linkin.cgi?id=' + r + '">' + r + '</a>');
+		html.push('</td><td>' + json.result[r] + '</td></tr>');
+	}
+	
+	html.push("</table>");
+	document.getElementById('results').innerHTML = html.join('');
+}
+
+function multiply() 
+{
+	 var num1 = 4;
+	 var num2 = 5;
+	 var myurl = url + "/multiply/" + num1;
+	 myurl = myurl + "/" + num2;
+	 
+	 gadgets.io.makeRequest(myurl, json2genomes, params);
+};
+
+function returnNumbers() 
+{
+	 var num1 = 4;
+	 var num2 = 5;
+	 var myurl = url + "/returnNumbers/" + num1;
+	 myurl = myurl + "/" + num2;
+	 
+	 gadgets.io.makeRequest(myurl, json2genomes, params);
+};
+
+
+function json2genomes(obj)
+{
+	var json = JSON.parse(obj.text);
+ 	    var html = [];
+      html.push("The real result is ");
+      // html.push(json.multiply);
+      //html.push(json.result[1]);
+      for (var r in json.result) 
+      	html.push("result: " + r + "<p />");
+      var place = 'genomes';
+      document.getElementById('genomes').innerHTML = html.join('');
+};
+
+
+
+
+</script>]]></Content>
+</Module>
