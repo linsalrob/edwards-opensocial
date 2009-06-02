@@ -1,4 +1,6 @@
 package edwardslab.util;
+//References: www.anddev.org/getting_data_from_the_web_urlconnection_via_http-t351.html
+//Used for the entire code, minus target site modification
 
 import java.io.BufferedInputStream;
 import java.io.InputStream;
@@ -7,6 +9,7 @@ import java.net.URLConnection;
 import java.util.Hashtable;
 
 import org.apache.http.util.ByteArrayBuffer;
+import org.json.simple.JSONObject;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -57,6 +60,8 @@ public class GenomeSearch extends Activity {
              /* On any Error we want to display it. */
              myString = e.getMessage();
         }
+        //JSONObject myObj = (JSONObject) JSONValue.parse(myString);
+        //JSONObject test = JSONObject(myString);
         /* Show the String on the GUI. */
         //tv.setText(myString);
         //this.setContentView(tv);
