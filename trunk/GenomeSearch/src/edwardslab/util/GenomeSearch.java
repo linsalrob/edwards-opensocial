@@ -1,6 +1,6 @@
 package edwardslab.util;
 //References: www.anddev.org/getting_data_from_the_web_urlconnection_via_http-t351.html
-//Used for the entire code, minus target site modification
+//Used for the entire code, minus target site modification.
 
 import java.io.BufferedInputStream;
 import java.io.InputStream;
