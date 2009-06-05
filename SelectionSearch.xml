@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+  <ModulePrefs title="Open Social Testing" author_email="vaskenis@gmail.com">
+    <Require feature="opensocial-0.8" />
+  </ModulePrefs>
+  <Content type="html" view="canvas"><![CDATA[
+  <div>
+   <div>
+    <span id='genomes'></span>
+  </div>
+	<button onclick='showSearch();'>Choose a genome</button>
+  <div>
+  	<span id='searchBox'></span>
+  </div>
+  <div>
+  	<span id='results'></span>
+  </div>
+</div>
+
+<script type="text/javascript" src="http://localhost:8080/OpenSocialTesting/canvas.js"></script>
+
+<script type="text/javascript">
+gadgets.util.registerOnLoadHandler(init);
+</script>
+
+    <!-- Get the genomes and create a list -->
+
+<script type='text/javascript'>
+
+gadgets.util.registerOnLoadHandler(init);
+
+var params = {};
+var genomenames;
+params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
+params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.POST;
+
+var url = "http://bioseed.mcs.anl.gov/~redwards/FIG/rest_seed.cgi";
+
+function init() 
+{
+	displayGenomesHtml();
+	//multiply();
+	//returnNumbers();
+};
+
+function displayGenomesHtml() {      
+
+	document.getElementById('genomes').innerHTML = "Getting all genomes from the SEED";
+
+	// get all the genomes      
+	var myurl = url + "/genomes/complete/undef/Bacteria";
+	gadgets.io.makeRequest(myurl, genomeSelectList, params);
+}
+
+function genomeSelectList(obj) {
+
+	var json = JSON.parse(obj.text);
+	genomenames = json.result;
+	var html = [];
+	html.push("<select id='genome'>");
+	
+	//for (g in json.result.sort(sortGenomeList))
+	for (g in json.result)
+		html.push('<option value="', g, '">', json.result[g], '</option>');
+
+	html.push("</select>");
+	document.getElementById('genomes').innerHTML = html.join('');
+};
+
+//function sortGenomeList(a, b) {
+//	return genomenames[a]- genomenames[b];
+//}
+
+function showSearch() {
+	var html = [];
+	html.push("<input type='text' size='25' id='searchTerm' onSubmit='searchGenome()' />");
+	html.push("	<button onclick='searchGenome();'>Search that genome</button>");
+	html.push("<br />Enter a term to search and press enter");
+	document.getElementById('searchBox').innerHTML = html.join('');
+};
+
+function searchGenome() {
+	document.body.style.cursor = 'wait';
+	var searchTerm = document.getElementById('searchTerm').value;
+	var genome = document.getElementById('genome').value;
+	document.getElementById('searchBox').innerHTML = "Searching for " + searchTerm + " in " + genomenames[genome];
+
+	var myurl = url + "/search_genome/" + genome + "/" + searchTerm;
+
+	// document.getElementById('results').innerHTML = "url : " + myurl;
+
+	gadgets.io.makeRequest(myurl, searchResults, params);
+	document.body.style.cursor = 'default';
+}
+
+function searchResults(obj) {
+	var json = JSON.parse(obj.text);
+	var html = [];
+
+	
+	html.push("<table>");
+	for (r in json.result) {
+		html.push('<tr><td><a href="http://www.theseed.org/linkin.cgi?id=' + r + '">' + r + '</a>');
+		html.push('</td><td>' + json.result[r] + '</td></tr>');
+	}
+
+	html.push("</table>");
+	document.getElementById('results').innerHTML = html.join('');
+}
+
+
+function json2genomes(obj)
+{
+	var json = JSON.parse(obj.text);
+	var html = [];
+	html.push("The real result is ");
+	// html.push(json.multiply);
+	//html.push(json.result[1]);
+	for (var r in json.result) 
+		html.push("result: " + r + "<p />");
+	var place = 'genomes';
+	document.getElementById('genomes').innerHTML = html.join('');
+};
+
+
+
+
+</script>
+
+
+<!-- The code for Canvas view is here. -->
+
+  ]]></Content>
+  <Content type="html" view="profile"><![CDATA[
+
+<script type="text/javascript" src="http://localhost:8080/OpenSocialTesting/profile.js"></script>
+
+<script type="text/javascript">
+gadgets.util.registerOnLoadHandler(init);
+</script>
+
+<!-- The code for Profile view is here. -->
+<div>Profile view for Open Social Testing.</div>
+
+  ]]></Content>
+</Module>
