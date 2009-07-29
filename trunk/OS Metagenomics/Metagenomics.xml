@@ -11,7 +11,7 @@
 
 <head>
 	<title>OS Metagenomics</title>
-	<script type="text/javascript" src="http://localhost:8080/OS Metagenomics/Metagenomics.js"></script>
+	<script type="text/javascript" src="http://edwards-opensocial.googlecode.com/svn/trunk/OS Metagenomics/Metagenomics.js"></script>
 </head>
 
 <body>
