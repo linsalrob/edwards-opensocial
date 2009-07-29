@@ -53,7 +53,8 @@ function createRequest() {
 	var uploadedFile = document.getElementsByName('uploadedFile')[0].value;
 	var stringency = document.getElementsByName('stringency')[0].value;
 	var level = document.getElementsByName('level')[0].value;
-	alert("Variables set");	
+	alert("Variables set");
+	var uf = "file://"+uploadedFile;
 	
 	http_request = null;
 	httpRequest();
@@ -63,7 +64,7 @@ function createRequest() {
 	}
 	
 	http_request.onreadystatechange = getFileContents;
-	http_request.open('GET', 'file://'+uploadedFile, true);
+	http_request.open('GET', uf, true);
 	http_request.send(null);
 	
 	
