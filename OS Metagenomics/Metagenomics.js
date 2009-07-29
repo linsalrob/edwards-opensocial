@@ -13,6 +13,7 @@ var http_request;
 
 function init() {
 	
+	alert("Hello!");
 	setInterval("gadgets.window.adjustHeight();", 1000);
 
 	document.getElementById('prompt').innerHTML = "<h4>Choose a fasta file to upload</h4>";
