@@ -50,6 +50,7 @@ function init() {
 // and receives the JSON string with the keys "max" and "url"
 function createRequest() {
 	
+	alert("Test");
 	var uploadedFile = document.getElementsByName('uploadedFile')[0].value;
 	var stringency = document.getElementsByName('stringency')[0].value;
 	var level = document.getElementsByName('level')[0].value;
@@ -58,7 +59,7 @@ function createRequest() {
 		return;
 	}
 	alert("Variables set");
-	var uf = "file://"+uploadedFile;
+	var uf = "file://C:/Users/DC/Desktop"+uploadedFile;
 	
 	http_request = null;
 	httpRequest();
