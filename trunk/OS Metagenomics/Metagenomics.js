@@ -53,27 +53,18 @@ function createRequest() {
 	var uploadedFile = document.getElementsByName('uploadedFile')[0].value;
 	var stringency = document.getElementsByName('stringency')[0].value;
 	var level = document.getElementsByName('level')[0].value;
-	alert("Variables set");
+	alert("Variables set");	
 	
-	fh = fopen(uploadedFile, 0);
-	if (fh != 1) {
-		length = flength(fh);
-		str = fread(fh, length);
-		fclose(fh);
+	http_request = null;
+	httpRequest();
+	if (http_request == null) {
+		alert("Cannot create an XMLHTTP instance. Browser does not support!");
+		return;
 	}
-	alert(str);
 	
-	
-//	http_request = null;
-//	httpRequest();
-//	if (http_request == null) {
-//		alert("Cannot create an XMLHTTP instance. Browser does not support!");
-//		return;
-//	}
-//	
-//	http_request.onreadystatechange = getFileContents;
-//	http_request.open('GET', uploadedFile, true);
-//	http_request.send(null);
+	http_request.onreadystatechange = getFileContents;
+	http_request.open('GET', 'file://'+uploadedFile, true);
+	http_request.send(null);
 	
 	
 	
