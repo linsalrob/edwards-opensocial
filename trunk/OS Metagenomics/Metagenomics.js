@@ -10,6 +10,9 @@ var params;
 //params[gadgets.io.RequestParameters.CONTENT_TYPE] = gadgets.io.ContentType.JSON;
 //params[gadgets.io.RequestParameters.METHOD] = gadgets.io.MethodType.POST;
 var http_request;
+var fh;
+var length;
+var str;
 
 function init() {
 	
@@ -52,16 +55,25 @@ function createRequest() {
 	var level = document.getElementsByName('level')[0].value;
 	alert("Variables set");
 	
-	http_request = null;
-	httpRequest();
-	if (http_request == null) {
-		alert("Cannot create an XMLHTTP instance. Browser does not support!");
-		return;
+	fh = fopen(uploadedFile, 0);
+	if (fh != 1) {
+		length = flength(fh);
+		str = fread(fh, length);
+		fclose(fh);
 	}
+	alert(str);
 	
-	http_request.onreadystatechange = getFileContents;
-	http_request.open('GET', uploadedFile, true);
-	http_request.send(null);
+	
+//	http_request = null;
+//	httpRequest();
+//	if (http_request == null) {
+//		alert("Cannot create an XMLHTTP instance. Browser does not support!");
+//		return;
+//	}
+//	
+//	http_request.onreadystatechange = getFileContents;
+//	http_request.open('GET', uploadedFile, true);
+//	http_request.send(null);
 	
 	
 	
