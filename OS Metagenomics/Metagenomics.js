@@ -16,6 +16,7 @@ var str;
 
 function init() {
 	
+	alert("Test");
 	setInterval("gadgets.window.adjustHeight();", 1000);
 
 	document.getElementById('prompt').innerHTML = "<h4>Choose a fasta file to upload</h4>";
@@ -50,7 +51,6 @@ function init() {
 // and receives the JSON string with the keys "max" and "url"
 function createRequest() {
 	
-	alert("Test");
 	var uploadedFile = document.getElementsByName('uploadedFile')[0].value;
 	var stringency = document.getElementsByName('stringency')[0].value;
 	var level = document.getElementsByName('level')[0].value;
