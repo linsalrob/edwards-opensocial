@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+    <ModulePrefs
+            title="OS Metagenomics"
+            description="Edward's Lab's metagenomics application for Open Social">
+        <Require feature="opensocial-0.8" />
+        <Require feature="dynamic-height" />
+    </ModulePrefs>
+    <Content type="html" view="canvas"><![CDATA[
+
+
+<head>
+	<title>OS Metagenomics</title>
+	<script type="text/javascript" src="http://localhost:8080/OS Metagenomics/Metagenomics.js"></script>
+</head>
+
+<body>
+	<div id='prompt'></div>
+	<div id='main'></div>
+	<div id='results'></div>
+	<div id='error'></div>
+
+	<script type='text/javascript'>
+		gadgets.util.registerOnLoadHandler(init());
+	</script>
+</body>
+]]></Content>
+</Module>
