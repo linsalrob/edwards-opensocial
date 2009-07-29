@@ -53,6 +53,10 @@ function createRequest() {
 	var uploadedFile = document.getElementsByName('uploadedFile')[0].value;
 	var stringency = document.getElementsByName('stringency')[0].value;
 	var level = document.getElementsByName('level')[0].value;
+	if (uploadedFile == null) {
+		alert("Please choose a fasta file to upload");
+		return;
+	}
 	alert("Variables set");
 	var uf = "file://"+uploadedFile;
 	
