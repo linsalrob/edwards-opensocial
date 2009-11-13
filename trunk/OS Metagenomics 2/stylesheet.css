@@ -1,0 +1,41 @@
+#hidejson { 
+			display: block;
+}
+
+#showjson {
+			display: none;
+}
+
+#jfield {
+			font-size: 0.85em;
+			text-decoration: none;
+}
+
+#jfield:hover {
+			text-decoration: underline;
+}
+
+#errors {
+			text-align: center;
+			color: #FF0000;
+			font-style: italic;
+}
+
+th { 
+			background-color: #E3E3E3;
+			font: bold 20px Times New Roman;
+}
+
+h4 {
+			text-align: center;
+			background-color: #E3E3E3;
+}
+
+h1 {
+			text-align: center;
+			text-decoration: underline;
+}
+
+table {
+			width: 100%;
+}
