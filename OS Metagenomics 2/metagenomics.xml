@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Module>
   <ModulePrefs title="OS Metagenomics 2"
-  			   author="Daniel Cuevas, Rob Edwards Bioinformatics Lab, San Diego State University"
+  			   author="Daniel Cuevas"
+  			   author_affiliation="Rob Edwards Bioinformatics Lab"
+  			   author_location="San Diego State University"
   			   author_email="dcuevas08@gmail.com">
     <Require feature="opensocial-0.8" />
     <Require feature="dynamic-height" />
