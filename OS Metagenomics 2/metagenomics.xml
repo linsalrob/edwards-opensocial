@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+  <ModulePrefs title="OS Metagenomics 2"
+  			   author="Daniel Cuevas, Rob Edwards Bioinformatics Lab, San Diego State University"
+  			   author_email="dcuevas08@gmail.com">
+    <Require feature="opensocial-0.8" />
+    <Require feature="dynamic-height" />
+  </ModulePrefs>
+  <Content type="html" view="canvas"><![CDATA[
+<body>
+<!-- Use these when developing and submitting to own repository -->  
+<!-- <link rel='stylesheet' title='my css script' href='http://dc-opensocial.googlecode.com/svn/OS Metagenomics 2/stylesheet.css' type='text/css'> -->
+<!-- <script type='text/javascript' src='http://dc-opensocial.googlecode.com/svn/OS Metagenomics 2/sorttable.js'></script> -->
+<!-- <script type='text/javascript' src='http://dc-opensocial.googlecode.com/svn/OS Metagenomics 2/metagenomics.js'></script> -->
+
+<!-- Use these when submitting to edwards repository -->
+<link rel='stylesheet' title='my css script' href='http://edwards-opensocial.googlecode.com/svn/trunk/OS Metagenomics 2/stylesheet.css' type='text/css'>
+<script type='text/javascript' src='http://edwards-opensocial.googlecode.com/svn/trunk/OS Metagenomics 2/sorttable.js'></script>
+<script type='text/javascript' src='http://edwards-opensocial.googlecode.com/svn/trunk/OS Metagenomics 2/metagenomics.js'></script>
+
+
+<div id='prompt'></div>
+<div id='main'></div>
+<div id='hidejson'></div>
+<div id='showjson'></div>
+<div id='buttons'></div>
+<div id='results'></div>
+<div id='errors'></div>
+<div id='restab'></div>
+
+<script type='text/javascript'>
+	gadgets.util.registerOnLoadHandler(init());
+</script>
+</body>
+  ]]></Content>
+  </Module>
